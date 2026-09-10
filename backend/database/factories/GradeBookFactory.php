@@ -2,18 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Enums\GradeBookStatusEnum;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Assessment>
- */
-class AssessmentFactory extends Factory
+class GradeBookFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
         return [
@@ -23,10 +16,9 @@ class AssessmentFactory extends Factory
             'class_id' => \App\Models\SchoolClass::factory(),
             'subject_id' => \App\Models\Subject::factory(),
             'teacher_assignment_id' => \App\Models\TeacherAssignment::factory(),
-            'type' => \App\Enums\AssessmentTypeEnum::AC->value,
-            'label' => 'Avaliação ' . $this->faker->word(),
-            'date' => clone $this->faker->dateTimeBetween('now', '+1 month'),
-            'is_active' => true,
+            'status' => GradeBookStatusEnum::DRAFT->value,
+            'submitted_at' => null,
+            'published_at' => null,
         ];
     }
 }

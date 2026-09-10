@@ -107,6 +107,29 @@ enum PermissionEnum: string
     case REPORTS_VIEW = 'reports.view';
     case REPORTS_EXPORT = 'reports.export';
 
+    // Assessment Settings
+    case ASSESSMENT_SETTINGS_VIEW   = 'assessment_settings.view';
+    case ASSESSMENT_SETTINGS_UPDATE = 'assessment_settings.update';
+
+    // Grade Books (pautas)
+    case GRADE_BOOKS_VIEW    = 'grade_books.view';
+    case GRADE_BOOKS_CREATE  = 'grade_books.create';
+    case GRADE_BOOKS_UPDATE  = 'grade_books.update';
+    case GRADE_BOOKS_SUBMIT  = 'grade_books.submit';
+    case GRADE_BOOKS_PUBLISH = 'grade_books.publish';
+    case GRADE_BOOKS_LOCK    = 'grade_books.lock';
+    case GRADE_BOOKS_UNLOCK  = 'grade_books.unlock';
+
+    // Grades — annulment (separate from update)
+    case GRADES_ANNUL = 'grades.annul';
+
+    // Academic Results
+    case ACADEMIC_RESULTS_VIEW = 'academic_results.view';
+
+    // Attendance Policy Settings
+    case ATTENDANCE_POLICY_VIEW   = 'attendance_policy.view';
+    case ATTENDANCE_POLICY_UPDATE = 'attendance_policy.update';
+
     /**
      * Get the permission group name.
      */
@@ -154,32 +177,45 @@ enum PermissionEnum: string
     {
         return match ($role) {
             RoleEnum::SUPER_ADMIN => self::cases(),
+
             RoleEnum::SCHOOL_ADMIN => array_filter(self::cases(), fn($p) => !in_array($p, [
                 self::SCHOOLS_CREATE,
                 self::SCHOOLS_DELETE,
             ])),
+
             RoleEnum::DIRECTOR => array_filter(self::cases(), fn($p) => in_array($p->group(), [
                 'users', 'students', 'guardians', 'teachers', 'classes',
                 'subjects', 'rooms', 'academic_years', 'terms', 'grades',
                 'attendance', 'finance', 'messages', 'reports',
                 'enrollments', 'teaching_assignments',
+                'assessment_settings', 'grade_books', 'academic_results',
+                'attendance_policy',
             ]) || $p === self::SCHOOLS_VIEW || $p === self::AUDIT_VIEW),
+
             RoleEnum::PEDAGOGIC_COORDINATOR => array_filter(self::cases(), fn($p) => in_array($p->group(), [
                 'students', 'guardians', 'teachers', 'classes',
                 'subjects', 'rooms', 'academic_years', 'terms', 'grades',
                 'attendance', 'messages', 'reports',
                 'enrollments', 'teaching_assignments',
+                'assessment_settings', 'grade_books', 'academic_results',
+                'attendance_policy',
             ])),
+
             RoleEnum::FINANCIAL => array_filter(self::cases(), fn($p) => in_array($p->group(), [
                 'finance', 'reports',
             ]) || $p === self::STUDENTS_VIEW || $p === self::MESSAGES_SEND || $p === self::MESSAGES_VIEW),
+
             RoleEnum::SECRETARY => array_filter(self::cases(), fn($p) => in_array($p->group(), [
                 'students', 'guardians', 'messages', 'enrollments',
             ]) || in_array($p, [
                 self::USERS_VIEW, self::CLASSES_VIEW, self::CLASSES_ENROLL,
                 self::ACADEMIC_YEARS_VIEW, self::TERMS_VIEW, self::ROOMS_VIEW,
                 self::TEACHING_ASSIGNMENTS_VIEW,
+                self::GRADES_VIEW, self::ATTENDANCE_VIEW,
+                self::GRADE_BOOKS_VIEW, self::ACADEMIC_RESULTS_VIEW,
+                self::ASSESSMENT_SETTINGS_VIEW, self::ATTENDANCE_POLICY_VIEW,
             ])),
+
             RoleEnum::TEACHER => [
                 self::CLASSES_VIEW, self::STUDENTS_VIEW,
                 self::GRADES_VIEW, self::GRADES_CREATE, self::GRADES_UPDATE,
@@ -187,14 +223,24 @@ enum PermissionEnum: string
                 self::MESSAGES_SEND, self::MESSAGES_VIEW,
                 self::SUBJECTS_VIEW, self::ACADEMIC_YEARS_VIEW, self::TERMS_VIEW,
                 self::TEACHING_ASSIGNMENTS_VIEW, self::ENROLLMENTS_VIEW,
+                // Grade books: teacher can view, create, update, and submit their own
+                self::GRADE_BOOKS_VIEW, self::GRADE_BOOKS_CREATE,
+                self::GRADE_BOOKS_UPDATE, self::GRADE_BOOKS_SUBMIT,
+                self::ASSESSMENT_SETTINGS_VIEW,
+                self::ACADEMIC_RESULTS_VIEW,
+                self::ATTENDANCE_POLICY_VIEW,
             ],
+
             RoleEnum::STUDENT => [
                 self::GRADES_VIEW, self::ATTENDANCE_VIEW,
                 self::MESSAGES_VIEW, self::MESSAGES_SEND,
+                self::ACADEMIC_RESULTS_VIEW,
             ],
+
             RoleEnum::GUARDIAN => [
                 self::GRADES_VIEW, self::ATTENDANCE_VIEW,
                 self::FINANCE_VIEW, self::MESSAGES_VIEW, self::MESSAGES_SEND,
+                self::ACADEMIC_RESULTS_VIEW,
             ],
         };
     }

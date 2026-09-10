@@ -67,7 +67,10 @@ class TermTest extends TestCase
     public function test_cannot_delete_term_with_assessments()
     {
         $term = Term::factory()->create(['academic_year_id' => $this->academicYear->id]);
-        Assessment::factory()->create(['term_id' => $term->id]);
+        Assessment::factory()->create([
+            'term_id' => $term->id,
+            'school_id' => $this->school->id,
+        ]);
 
         Sanctum::actingAs($this->user);
         $response = $this->deleteJson("/api/v1/terms/{$term->id}");

@@ -1,9 +1,17 @@
 <?php
 
+use App\Http\Controllers\Api\V1\AcademicResultController;
 use App\Http\Controllers\Api\V1\AcademicYearController;
+use App\Http\Controllers\Api\V1\AssessmentController;
+use App\Http\Controllers\Api\V1\AssessmentSettingController;
+use App\Http\Controllers\Api\V1\AttendanceSessionController;
+use App\Http\Controllers\Api\V1\AttendanceSummaryController;
 use App\Http\Controllers\Api\V1\ClassController;
 use App\Http\Controllers\Api\V1\EnrollmentController;
+use App\Http\Controllers\Api\V1\GradeBookController;
+use App\Http\Controllers\Api\V1\GradeController;
 use App\Http\Controllers\Api\V1\GuardianController;
+use App\Http\Controllers\Api\V1\ReportController;
 use App\Http\Controllers\Api\V1\TermController;
 use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\RoleController;
@@ -203,17 +211,79 @@ Route::middleware(['auth:sanctum', 'school'])->group(function () {
     Route::middleware('permission:enrollments.delete')
         ->delete('/enrollments/{enrollment}', [EnrollmentController::class, 'destroy']);
 
-    // ── Placeholder routes for future controllers ──
-    // Route::apiResource('classes.assessments', AssessmentController::class);
-    // Route::post('assessments/{assessment}/grades', [GradeController::class, 'store']);
-    // Route::post('classes/{class}/attendance', [AttendanceController::class, 'store']);
-    // Route::get('classes/{class}/attendance', [AttendanceController::class, 'index']);
-    // Route::apiResource('tuition-plans', TuitionPlanController::class);
-    // Route::apiResource('invoices', InvoiceController::class);
-    // Route::post('invoices/{invoice}/payments', [PaymentController::class, 'store']);
-    // Route::apiResource('expenses', ExpenseController::class);
-    // Route::apiResource('messages', MessageController::class);
-    // Route::get('notifications', [NotificationController::class, 'index']);
-    // Route::put('notifications/{notification}/read', [NotificationController::class, 'markRead']);
-    // Route::get('audit-logs', [AuditLogController::class, 'index']);
+    // ── Phase 3: Academic Core ────────────────────────────────────────────────
+
+    // Assessment Settings
+    Route::middleware('permission:assessment_settings.view')->group(function () {
+        Route::get('/assessment-settings', [AssessmentSettingController::class, 'index']);
+        Route::get('/assessment-settings/{assessmentSetting}', [AssessmentSettingController::class, 'show']);
+    });
+    Route::middleware('permission:assessment_settings.update')
+        ->put('/assessment-settings/{assessmentSetting}', [AssessmentSettingController::class, 'update']);
+
+    // Assessments
+    Route::middleware('permission:grades.view')->group(function () {
+        Route::get('/assessments', [AssessmentController::class, 'index']);
+        Route::get('/assessments/{assessment}', [AssessmentController::class, 'show']);
+    });
+    Route::middleware('permission:grades.create')
+        ->post('/assessments', [AssessmentController::class, 'store']);
+    Route::middleware('permission:grades.update')
+        ->put('/assessments/{assessment}', [AssessmentController::class, 'update']);
+    Route::middleware('permission:grades.update')
+        ->delete('/assessments/{assessment}', [AssessmentController::class, 'destroy']);
+
+    // Grades (per assessment)
+    Route::middleware('permission:grades.view')
+        ->get('/assessments/{assessment}/grades', [GradeController::class, 'index']);
+    Route::middleware('permission:grades.create')
+        ->post('/assessments/{assessment}/grades', [GradeController::class, 'store']);
+    Route::middleware('permission:grades.update')
+        ->put('/assessments/{assessment}/grades/{grade}', [GradeController::class, 'update']);
+    Route::middleware('permission:grades.annul')
+        ->post('/assessments/{assessment}/grades/{grade}/annul', [GradeController::class, 'annul']);
+
+    // Grade Books
+    Route::middleware('permission:grade_books.view')->group(function () {
+        Route::get('/grade-books', [GradeBookController::class, 'index']);
+        Route::get('/grade-books/{gradeBook}', [GradeBookController::class, 'show']);
+    });
+    Route::middleware('permission:grade_books.create')
+        ->post('/grade-books', [GradeBookController::class, 'store']);
+    Route::middleware('permission:grade_books.submit')
+        ->post('/grade-books/{gradeBook}/submit', [GradeBookController::class, 'submit']);
+    Route::middleware('permission:grade_books.publish')
+        ->post('/grade-books/{gradeBook}/publish', [GradeBookController::class, 'publish']);
+    Route::middleware('permission:grade_books.lock')
+        ->post('/grade-books/{gradeBook}/lock', [GradeBookController::class, 'lock']);
+    Route::middleware('permission:grade_books.unlock')
+        ->post('/grade-books/{gradeBook}/unlock', [GradeBookController::class, 'unlock']);
+
+    // Attendance Sessions
+    Route::middleware('permission:attendance.view')->group(function () {
+        Route::get('/attendance-sessions', [AttendanceSessionController::class, 'index']);
+        Route::get('/attendance-sessions/{attendanceSession}', [AttendanceSessionController::class, 'show']);
+        Route::get('/attendance-sessions/{attendanceSession}/records', [AttendanceSessionController::class, 'records']);
+    });
+    Route::middleware('permission:attendance.create')
+        ->post('/attendance-sessions', [AttendanceSessionController::class, 'store']);
+    Route::middleware('permission:attendance.update')
+        ->put('/attendance-sessions/{attendanceSession}/records/{attendanceRecord}', [AttendanceSessionController::class, 'updateRecord']);
+
+    // Attendance Summary
+    Route::middleware('permission:attendance.view')
+        ->get('/attendance/summary', [AttendanceSummaryController::class, 'index']);
+
+    // Academic Results
+    Route::middleware('permission:academic_results.view')
+        ->get('/academic-results', [AcademicResultController::class, 'index']);
+
+    // Reports
+    Route::middleware('permission:reports.view')->group(function () {
+        Route::get('/reports/student-report-card', [ReportController::class, 'studentReportCard']);
+        Route::get('/reports/class-grade-sheet', [ReportController::class, 'classGradeSheet']);
+        Route::get('/reports/subject-mini-grade-sheet', [ReportController::class, 'subjectMiniGradeSheet']);
+        Route::get('/reports/academic-alerts', [ReportController::class, 'academicAlerts']);
+    });
 });
+

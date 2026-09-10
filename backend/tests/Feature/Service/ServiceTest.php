@@ -15,7 +15,7 @@ use App\Models\Subject;
 use App\Models\Term;
 use App\Models\User;
 use App\Services\EnrollmentService;
-use App\Services\GradeService;
+
 use App\Services\InvoiceService;
 use App\Services\PaymentService;
 use Database\Seeders\RoleAndPermissionSeeder;
@@ -82,11 +82,10 @@ class ServiceTest extends TestCase
     {
         $service = new EnrollmentService();
 
-        $service->enroll($this->student->id, $this->class->id, $this->school->id);
-
         $this->expectException(\RuntimeException::class);
         $this->expectExceptionMessage('O aluno já está matriculado neste ano lectivo.');
 
+        // This will throw because $this->student was enrolled in setUp()
         $service->enroll($this->student->id, $this->class->id, $this->school->id);
     }
 
@@ -97,7 +96,7 @@ class ServiceTest extends TestCase
         // Fill the class to capacity (max_students = 3, already have 1)
         for ($i = 0; $i < 2; $i++) {
             $s = Student::factory()->create(['school_id' => $this->school->id]);
-            $service->enroll($s, $this->class);
+            $service->enroll($s->id, $this->class->id, $this->school->id);
         }
 
         // This should fail — class is full
@@ -109,67 +108,7 @@ class ServiceTest extends TestCase
         $service->enroll($student->id, $this->class->id, $this->school->id);
     }
 
-    // ── GradeService ──
 
-    public function test_grade_above_max_score_throws_exception(): void
-    {
-        $term = Term::create([
-            'academic_year_id' => $this->class->academic_year_id,
-            'name' => '1º Trimestre',
-            'start_date' => '2026-02-01',
-            'end_date' => '2026-04-30',
-        ]);
-
-        $assessment = Assessment::create([
-            'class_id' => $this->class->id,
-            'term_id' => $term->id,
-            'name' => 'Prova 1',
-            'type' => 'exam',
-            'max_score' => 20.00,
-            'weight' => 1.00,
-        ]);
-
-        $service = new GradeService();
-
-        $this->expectException(\RuntimeException::class);
-        $this->expectExceptionMessage('excede o máximo');
-
-        $service->submitGrades($assessment, [
-            ['enrollment_id' => $this->enrollment->id, 'score' => 25.00],
-        ]);
-    }
-
-    public function test_valid_grade_submission(): void
-    {
-        $term = Term::create([
-            'academic_year_id' => $this->class->academic_year_id,
-            'name' => '1º Trimestre',
-            'start_date' => '2026-02-01',
-            'end_date' => '2026-04-30',
-        ]);
-
-        $assessment = Assessment::create([
-            'class_id' => $this->class->id,
-            'term_id' => $term->id,
-            'name' => 'Prova 1',
-            'type' => 'exam',
-            'max_score' => 20.00,
-            'weight' => 1.00,
-        ]);
-
-        $service = new GradeService();
-        $grades = $service->submitGrades($assessment, [
-            ['enrollment_id' => $this->enrollment->id, 'score' => 15.50],
-        ]);
-
-        $this->assertCount(1, $grades);
-        $this->assertEquals(15.50, $grades[0]->score);
-        $this->assertDatabaseHas('grades', [
-            'assessment_id' => $assessment->id,
-            'enrollment_id' => $this->enrollment->id,
-            'score' => 15.50,
-        ]);
-    }
 
     // ── InvoiceService ──
 

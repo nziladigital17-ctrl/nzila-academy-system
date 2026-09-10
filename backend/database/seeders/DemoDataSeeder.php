@@ -103,9 +103,14 @@ class DemoDataSeeder extends Seeder
             ]
         );
 
-        // Assign teacher
+        // Assign teacher (Phase 3 schema compliance)
         $class->teachers()->syncWithoutDetaching([
-            $teacher->id => ['role' => 'titular'],
+            $teacher->id => [
+                'role'             => 'titular',
+                'school_id'        => $school->id,
+                'academic_year_id' => $year->id,
+                'subject_id'       => $subject->id,
+            ],
         ]);
 
         // Demo students
@@ -130,10 +135,14 @@ class DemoDataSeeder extends Seeder
 
             // Enroll in class
             Enrollment::firstOrCreate(
-                ['student_id' => $student->id, 'class_id' => $class->id],
+                [
+                    'school_id'  => $school->id,
+                    'student_id' => $student->id,
+                    'class_id'   => $class->id,
+                ],
                 [
                     'enrolled_at' => '2026-02-01',
-                    'status' => 'active',
+                    'status'      => 'active',
                 ]
             );
         }

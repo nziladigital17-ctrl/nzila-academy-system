@@ -65,11 +65,11 @@ class EnrollmentTest extends TestCase
 
     public function test_can_list_enrollments(): void
     {
-        Enrollment::factory()->count(2)->create([
-            'school_id' => $this->school->id,
-            'student_id' => $this->student->id,
-            'class_id' => $this->schoolClass->id,
-        ]);
+        $s1 = Student::factory()->create(['school_id' => $this->school->id]);
+        $s2 = Student::factory()->create(['school_id' => $this->school->id]);
+
+        Enrollment::factory()->create(['school_id' => $this->school->id, 'student_id' => $s1->id, 'class_id' => $this->schoolClass->id]);
+        Enrollment::factory()->create(['school_id' => $this->school->id, 'student_id' => $s2->id, 'class_id' => $this->schoolClass->id]);
 
         Sanctum::actingAs($this->secretary);
         $response = $this->getJson('/api/v1/enrollments');

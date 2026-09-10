@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Enums\AssessmentTypeEnum;
 use App\Traits\Auditable;
 use App\Traits\BelongsToSchool;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -10,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Assessment extends Model
+class AttendanceSession extends Model
 {
     use HasFactory, BelongsToSchool, Auditable;
 
@@ -21,16 +20,15 @@ class Assessment extends Model
         'class_id',
         'subject_id',
         'teacher_assignment_id',
-        'type',
-        'label',
         'date',
-        'is_active',
+        'weekly_periods',
+        'notes',
+        'recorded_by',
     ];
 
     protected $casts = [
-        'date'      => 'date',
-        'is_active' => 'boolean',
-        'type'      => AssessmentTypeEnum::class,
+        'date'           => 'date',
+        'weekly_periods' => 'integer',
     ];
 
     // ── Relationships ──────────────────────────────────────────────────────
@@ -60,13 +58,13 @@ class Assessment extends Model
         return $this->belongsTo(TeacherAssignment::class);
     }
 
-    public function grades(): HasMany
+    public function recordedByUser(): BelongsTo
     {
-        return $this->hasMany(Grade::class);
+        return $this->belongsTo(User::class, 'recorded_by');
     }
 
-    public function activeGrades(): HasMany
+    public function attendanceRecords(): HasMany
     {
-        return $this->hasMany(Grade::class)->where('is_annulled', false);
+        return $this->hasMany(AttendanceRecord::class);
     }
 }
