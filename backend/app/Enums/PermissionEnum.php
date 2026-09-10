@@ -61,6 +61,24 @@ enum PermissionEnum: string
     case ACADEMIC_YEARS_UPDATE = 'academic_years.update';
     case ACADEMIC_YEARS_DELETE = 'academic_years.delete';
 
+    // Terms
+    case TERMS_VIEW = 'terms.view';
+    case TERMS_CREATE = 'terms.create';
+    case TERMS_UPDATE = 'terms.update';
+    case TERMS_DELETE = 'terms.delete';
+
+    // Enrollments
+    case ENROLLMENTS_VIEW = 'enrollments.view';
+    case ENROLLMENTS_CREATE = 'enrollments.create';
+    case ENROLLMENTS_UPDATE = 'enrollments.update';
+    case ENROLLMENTS_DELETE = 'enrollments.delete';
+
+    // Teaching Assignments
+    case TEACHING_ASSIGNMENTS_VIEW = 'teaching_assignments.view';
+    case TEACHING_ASSIGNMENTS_CREATE = 'teaching_assignments.create';
+    case TEACHING_ASSIGNMENTS_UPDATE = 'teaching_assignments.update';
+    case TEACHING_ASSIGNMENTS_DELETE = 'teaching_assignments.delete';
+
     // Grades
     case GRADES_VIEW = 'grades.view';
     case GRADES_CREATE = 'grades.create';
@@ -142,29 +160,33 @@ enum PermissionEnum: string
             ])),
             RoleEnum::DIRECTOR => array_filter(self::cases(), fn($p) => in_array($p->group(), [
                 'users', 'students', 'guardians', 'teachers', 'classes',
-                'subjects', 'rooms', 'academic_years', 'grades',
+                'subjects', 'rooms', 'academic_years', 'terms', 'grades',
                 'attendance', 'finance', 'messages', 'reports',
+                'enrollments', 'teaching_assignments',
             ]) || $p === self::SCHOOLS_VIEW || $p === self::AUDIT_VIEW),
             RoleEnum::PEDAGOGIC_COORDINATOR => array_filter(self::cases(), fn($p) => in_array($p->group(), [
                 'students', 'guardians', 'teachers', 'classes',
-                'subjects', 'rooms', 'academic_years', 'grades',
+                'subjects', 'rooms', 'academic_years', 'terms', 'grades',
                 'attendance', 'messages', 'reports',
+                'enrollments', 'teaching_assignments',
             ])),
             RoleEnum::FINANCIAL => array_filter(self::cases(), fn($p) => in_array($p->group(), [
                 'finance', 'reports',
             ]) || $p === self::STUDENTS_VIEW || $p === self::MESSAGES_SEND || $p === self::MESSAGES_VIEW),
             RoleEnum::SECRETARY => array_filter(self::cases(), fn($p) => in_array($p->group(), [
-                'students', 'guardians', 'messages',
+                'students', 'guardians', 'messages', 'enrollments',
             ]) || in_array($p, [
                 self::USERS_VIEW, self::CLASSES_VIEW, self::CLASSES_ENROLL,
-                self::ACADEMIC_YEARS_VIEW, self::ROOMS_VIEW,
+                self::ACADEMIC_YEARS_VIEW, self::TERMS_VIEW, self::ROOMS_VIEW,
+                self::TEACHING_ASSIGNMENTS_VIEW,
             ])),
             RoleEnum::TEACHER => [
                 self::CLASSES_VIEW, self::STUDENTS_VIEW,
                 self::GRADES_VIEW, self::GRADES_CREATE, self::GRADES_UPDATE,
                 self::ATTENDANCE_VIEW, self::ATTENDANCE_CREATE, self::ATTENDANCE_UPDATE,
                 self::MESSAGES_SEND, self::MESSAGES_VIEW,
-                self::SUBJECTS_VIEW, self::ACADEMIC_YEARS_VIEW,
+                self::SUBJECTS_VIEW, self::ACADEMIC_YEARS_VIEW, self::TERMS_VIEW,
+                self::TEACHING_ASSIGNMENTS_VIEW, self::ENROLLMENTS_VIEW,
             ],
             RoleEnum::STUDENT => [
                 self::GRADES_VIEW, self::ATTENDANCE_VIEW,

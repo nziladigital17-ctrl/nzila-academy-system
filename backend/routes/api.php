@@ -1,9 +1,18 @@
 <?php
 
+use App\Http\Controllers\Api\V1\AcademicYearController;
+use App\Http\Controllers\Api\V1\ClassController;
+use App\Http\Controllers\Api\V1\EnrollmentController;
+use App\Http\Controllers\Api\V1\GuardianController;
+use App\Http\Controllers\Api\V1\TermController;
 use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\RoleController;
+use App\Http\Controllers\Api\V1\RoomController;
 use App\Http\Controllers\Api\V1\SchoolController;
 use App\Http\Controllers\Api\V1\StudentController;
+use App\Http\Controllers\Api\V1\SubjectController;
+use App\Http\Controllers\Api\V1\TeacherAssignmentController;
+use App\Http\Controllers\Api\V1\TeacherController;
 use App\Http\Controllers\Api\V1\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -69,6 +78,102 @@ Route::middleware(['auth:sanctum', 'school'])->group(function () {
     Route::get('/permissions', [RoleController::class, 'permissions'])
         ->middleware('permission:users.view');
 
+    // Teachers
+    Route::middleware('permission:teachers.view')->group(function () {
+        Route::get('/teachers', [TeacherController::class, 'index']);
+        Route::get('/teachers/{teacher}', [TeacherController::class, 'show']);
+    });
+    Route::middleware('permission:teachers.create')
+        ->post('/teachers', [TeacherController::class, 'store']);
+    Route::middleware('permission:teachers.update')
+        ->put('/teachers/{teacher}', [TeacherController::class, 'update']);
+    Route::middleware('permission:teachers.delete')
+        ->delete('/teachers/{teacher}', [TeacherController::class, 'destroy']);
+
+    // Subjects
+    Route::middleware('permission:subjects.view')->group(function () {
+        Route::get('/subjects', [SubjectController::class, 'index']);
+        Route::get('/subjects/{subject}', [SubjectController::class, 'show']);
+    });
+    Route::middleware('permission:subjects.create')
+        ->post('/subjects', [SubjectController::class, 'store']);
+    Route::middleware('permission:subjects.update')
+        ->put('/subjects/{subject}', [SubjectController::class, 'update']);
+    Route::middleware('permission:subjects.delete')
+        ->delete('/subjects/{subject}', [SubjectController::class, 'destroy']);
+
+    // Rooms
+    Route::middleware('permission:rooms.view')->group(function () {
+        Route::get('/rooms', [RoomController::class, 'index']);
+        Route::get('/rooms/{room}', [RoomController::class, 'show']);
+    });
+    Route::middleware('permission:rooms.create')
+        ->post('/rooms', [RoomController::class, 'store']);
+    Route::middleware('permission:rooms.update')
+        ->put('/rooms/{room}', [RoomController::class, 'update']);
+    Route::middleware('permission:rooms.delete')
+        ->delete('/rooms/{room}', [RoomController::class, 'destroy']);
+
+    // Academic Years
+    Route::middleware('permission:academic_years.view')->group(function () {
+        Route::get('/academic-years', [AcademicYearController::class, 'index']);
+        Route::get('/academic-years/{academicYear}', [AcademicYearController::class, 'show']);
+    });
+    Route::middleware('permission:academic_years.create')
+        ->post('/academic-years', [AcademicYearController::class, 'store']);
+    Route::middleware('permission:academic_years.update')
+        ->put('/academic-years/{academicYear}', [AcademicYearController::class, 'update']);
+    Route::middleware('permission:academic_years.delete')
+        ->delete('/academic-years/{academicYear}', [AcademicYearController::class, 'destroy']);
+
+    // Terms
+    Route::middleware('permission:terms.view')->group(function () {
+        Route::get('/academic-years/{academicYear}/terms', [TermController::class, 'index']);
+        Route::get('/terms/{term}', [TermController::class, 'show']);
+    });
+    Route::middleware('permission:terms.create')
+        ->post('/terms', [TermController::class, 'store']);
+    Route::middleware('permission:terms.update')
+        ->put('/terms/{term}', [TermController::class, 'update']);
+    Route::middleware('permission:terms.delete')
+        ->delete('/terms/{term}', [TermController::class, 'destroy']);
+
+    // Classes
+    Route::middleware('permission:classes.view')->group(function () {
+        Route::get('/classes', [ClassController::class, 'index']);
+        Route::get('/classes/{class}', [ClassController::class, 'show']);
+    });
+    Route::middleware('permission:classes.create')
+        ->post('/classes', [ClassController::class, 'store']);
+    Route::middleware('permission:classes.update')
+        ->put('/classes/{class}', [ClassController::class, 'update']);
+    Route::middleware('permission:classes.delete')
+        ->delete('/classes/{class}', [ClassController::class, 'destroy']);
+
+    // Teaching Assignments
+    Route::middleware('permission:teaching_assignments.view')->group(function () {
+        Route::get('/teaching-assignments', [TeacherAssignmentController::class, 'index']);
+        Route::get('/teaching-assignments/{teacherAssignment}', [TeacherAssignmentController::class, 'show']);
+    });
+    Route::middleware('permission:teaching_assignments.create')
+        ->post('/teaching-assignments', [TeacherAssignmentController::class, 'store']);
+    Route::middleware('permission:teaching_assignments.update')
+        ->put('/teaching-assignments/{teacherAssignment}', [TeacherAssignmentController::class, 'update']);
+    Route::middleware('permission:teaching_assignments.delete')
+        ->delete('/teaching-assignments/{teacherAssignment}', [TeacherAssignmentController::class, 'destroy']);
+
+    // Guardians
+    Route::middleware('permission:guardians.view')->group(function () {
+        Route::get('/guardians', [GuardianController::class, 'index']);
+        Route::get('/guardians/{guardian}', [GuardianController::class, 'show']);
+    });
+    Route::middleware('permission:guardians.create')
+        ->post('/guardians', [GuardianController::class, 'store']);
+    Route::middleware('permission:guardians.update')
+        ->put('/guardians/{guardian}', [GuardianController::class, 'update']);
+    Route::middleware('permission:guardians.delete')
+        ->delete('/guardians/{guardian}', [GuardianController::class, 'destroy']);
+
     // Students
     Route::middleware('permission:students.view')->group(function () {
         Route::get('/students', [StudentController::class, 'index']);
@@ -76,25 +181,29 @@ Route::middleware(['auth:sanctum', 'school'])->group(function () {
     });
     Route::middleware('permission:students.create')
         ->post('/students', [StudentController::class, 'store']);
-    Route::middleware('permission:students.update')
-        ->put('/students/{student}', [StudentController::class, 'update']);
+    Route::middleware('permission:students.update')->group(function () {
+        Route::put('/students/{student}', [StudentController::class, 'update']);
+        Route::post('/students/{student}/guardians', [StudentController::class, 'attachGuardian']);
+        Route::delete('/students/{student}/guardians/{guardian}', [StudentController::class, 'detachGuardian']);
+    });
     Route::middleware('permission:students.delete')
         ->delete('/students/{student}', [StudentController::class, 'destroy']);
-    Route::middleware('permission:students.update')
-        ->post('/students/{student}/guardians', [StudentController::class, 'attachGuardian']);
+    Route::middleware('permission:students.view')
+        ->get('/students/{student}/guardians', [StudentController::class, 'listGuardians']);
+
+    // Enrollments
+    Route::middleware('permission:enrollments.view')->group(function () {
+        Route::get('/enrollments', [EnrollmentController::class, 'index']);
+        Route::get('/enrollments/{enrollment}', [EnrollmentController::class, 'show']);
+    });
+    Route::middleware('permission:enrollments.create')
+        ->post('/enrollments', [EnrollmentController::class, 'store']);
+    Route::middleware('permission:enrollments.update')
+        ->put('/enrollments/{enrollment}', [EnrollmentController::class, 'update']);
+    Route::middleware('permission:enrollments.delete')
+        ->delete('/enrollments/{enrollment}', [EnrollmentController::class, 'destroy']);
 
     // ── Placeholder routes for future controllers ──
-    // These will be implemented in the next development phase:
-    //
-    // Route::apiResource('guardians', GuardianController::class);
-    // Route::apiResource('teachers', TeacherController::class);
-    // Route::apiResource('subjects', SubjectController::class);
-    // Route::apiResource('rooms', RoomController::class);
-    // Route::apiResource('academic-years', AcademicYearController::class);
-    // Route::apiResource('academic-years.terms', TermController::class);
-    // Route::apiResource('classes', ClassController::class);
-    // Route::post('classes/{class}/enrollments', [EnrollmentController::class, 'store']);
-    // Route::post('classes/{class}/teacher-assignments', [TeacherAssignmentController::class, 'store']);
     // Route::apiResource('classes.assessments', AssessmentController::class);
     // Route::post('assessments/{assessment}/grades', [GradeController::class, 'store']);
     // Route::post('classes/{class}/attendance', [AttendanceController::class, 'store']);

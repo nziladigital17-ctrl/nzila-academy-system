@@ -15,14 +15,14 @@
 - [x] Testes de autenticação e permissões
 - [x] Documentação técnica (7 documentos)
 
-## 📋 Fase 2 — API Completa
+## ✅ Fase 2 — API Completa
 
-- [ ] Implementar todos os controllers CRUD pendentes
-- [ ] Form Requests para cada endpoint
-- [ ] API Resources para transformação JSON
-- [ ] Testes para todos os endpoints
-- [ ] Paginação e filtros avançados
-- [ ] Upload de ficheiros (fotos, logos)
+- [x] Implementar todos os controllers CRUD pendentes
+- [x] Form Requests para cada endpoint
+- [x] API Resources para transformação JSON
+- [x] Testes para todos os endpoints
+- [x] Paginação e filtros avançados
+- [x] Upload de ficheiros (fotos, logos)
 
 ## 📋 Fase 3 — Frontend Base
 

@@ -14,6 +14,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('code');
             $table->text('description')->nullable();
+            $table->integer('weekly_hours')->default(0);
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
 
             $table->unique(['school_id', 'code']);

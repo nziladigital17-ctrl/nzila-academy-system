@@ -3,16 +3,18 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
-use App\Models\Guardian;
+use App\Http\Requests\StoreStudentGuardianRequest;
+use App\Http\Requests\StoreStudentRequest;
+use App\Http\Requests\UpdateStudentRequest;
+use App\Http\Resources\GuardianResource;
+use App\Http\Resources\StudentResource;
 use App\Models\Student;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
 
 class StudentController extends Controller
 {
-    public function index(Request $request): JsonResponse
+    public function index(Request $request)
     {
         $query = Student::with('guardians');
 
@@ -21,114 +23,104 @@ class StudentController extends Controller
         }
 
         if ($request->has('search')) {
-            $query->where(function ($q) use ($request) {
-                $q->where('full_name', 'like', "%{$request->search}%")
-                  ->orWhere('student_number', 'like', "%{$request->search}%");
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('full_name', 'like', "%{$search}%")
+                  ->orWhere('student_number', 'like', "%{$search}%");
             });
         }
 
-        return response()->json($query->paginate(15));
+        return StudentResource::collection($query->paginate(15));
     }
 
-    public function store(Request $request): JsonResponse
+    public function store(StoreStudentRequest $request)
     {
-        $authUser = $request->user();
+        $validated = $request->validated();
 
-        $validated = $request->validate([
-            'full_name' => 'required|string|max:255',
-            'gender' => 'required|in:M,F',
-            'birth_date' => 'required|date',
-            'birth_place' => 'nullable|string|max:255',
-            'nationality' => 'nullable|string|max:100',
-            'bi_number' => 'nullable|string|max:50',
-            'address' => 'nullable|string',
-        ]);
-
-        // Determine school_id: super admin must provide it, others inherit theirs
-        if (!$authUser->school_id) {
+        if (!$request->user()->school_id) {
             $request->validate(['school_id' => 'required|exists:schools,id']);
             $validated['school_id'] = $request->input('school_id');
         } else {
-            $validated['school_id'] = $authUser->school_id;
+            $validated['school_id'] = $request->user()->school_id;
         }
 
         $validated['student_number'] = $this->generateStudentNumber($validated['school_id']);
 
         $student = Student::create($validated);
 
-        return response()->json([
-            'message' => 'Aluno registado com sucesso.',
-            'data' => $student,
-        ], 201);
+        return (new StudentResource($student))
+            ->response()
+            ->setStatusCode(201);
     }
 
-    public function show(Student $student): JsonResponse
+    public function show(Student $student)
     {
-        // School isolation enforced by BelongsToSchool global scope + EnsureBelongsToSchool middleware
-        return response()->json([
-            'data' => $student->load('guardians', 'enrollments.schoolClass'),
-        ]);
+        return new StudentResource($student->load('guardians', 'enrollments.schoolClass'));
     }
 
-    public function update(Request $request, Student $student): JsonResponse
+    public function update(UpdateStudentRequest $request, Student $student)
     {
-        $validated = $request->validate([
-            'full_name' => 'sometimes|string|max:255',
-            'gender' => 'sometimes|in:M,F',
-            'birth_date' => 'sometimes|date',
-            'birth_place' => 'nullable|string|max:255',
-            'nationality' => 'nullable|string|max:100',
-            'bi_number' => 'nullable|string|max:50',
-            'address' => 'nullable|string',
-            'is_active' => 'sometimes|boolean',
-        ]);
+        $student->update($request->validated());
 
-        $student->update($validated);
-
-        return response()->json([
-            'message' => 'Aluno actualizado com sucesso.',
-            'data' => $student,
-        ]);
+        return new StudentResource($student);
     }
 
-    public function destroy(Student $student): JsonResponse
+    public function destroy(Student $student)
     {
         $student->delete();
 
-        return response()->json([
-            'message' => 'Aluno removido com sucesso.',
-        ]);
+        return response()->json(['message' => 'Aluno removido com sucesso.']);
+    }
+
+    /**
+     * GET /api/v1/students/{student}/guardians
+     */
+    public function listGuardians(Student $student)
+    {
+        return GuardianResource::collection($student->guardians);
     }
 
     /**
      * POST /api/v1/students/{student}/guardians
      */
-    public function attachGuardian(Request $request, Student $student): JsonResponse
+    public function attachGuardian(StoreStudentGuardianRequest $request, Student $student)
     {
-        $validated = $request->validate([
-            'guardian_id' => 'required|exists:guardians,id',
-            'is_primary' => 'sometimes|boolean',
-        ]);
+        $validated = $request->validated();
 
-        // Validate that the guardian belongs to the same school as the student
-        $guardian = Guardian::find($validated['guardian_id']);
-        if ($guardian && $student->school_id && $guardian->school_id !== $student->school_id) {
-            abort(403, 'O encarregado não pertence à mesma escola do aluno.');
+        // If setting as primary, ensure only one primary per student
+        if (!empty($validated['is_primary']) && $validated['is_primary']) {
+            // Remove existing primary
+            DB::table('student_guardians')
+                ->where('student_id', $student->id)
+                ->where('is_primary', true)
+                ->update(['is_primary' => false]);
         }
 
         $student->guardians()->syncWithoutDetaching([
-            $validated['guardian_id'] => ['is_primary' => $validated['is_primary'] ?? false],
+            $validated['guardian_id'] => [
+                'is_primary' => $validated['is_primary'] ?? false,
+                'relationship' => $validated['relationship'],
+            ],
         ]);
 
         return response()->json([
             'message' => 'Encarregado associado com sucesso.',
-            'data' => $student->load('guardians'),
+            'data' => GuardianResource::collection($student->load('guardians')->guardians),
         ]);
     }
 
     /**
+     * DELETE /api/v1/students/{student}/guardians/{guardian}
+     */
+    public function detachGuardian(Student $student, int $guardian)
+    {
+        $student->guardians()->detach($guardian);
+
+        return response()->json(['message' => 'Encarregado desassociado com sucesso.']);
+    }
+
+    /**
      * Generate a unique student number with retry to avoid race conditions.
-     * Uses the unique constraint on (school_id, student_number) as safety net.
      */
     private function generateStudentNumber(int $schoolId): string
     {
@@ -143,9 +135,9 @@ class StudentController extends Controller
 
             $number = sprintf('ALU-%s-%05d', $year, $count);
 
-            // Check uniqueness before returning
             $exists = Student::withoutGlobalScopes()
                 ->where('student_number', $number)
+                ->where('school_id', $schoolId)
                 ->exists();
 
             if (!$exists) {
@@ -153,7 +145,6 @@ class StudentController extends Controller
             }
         }
 
-        // Fallback: use timestamp-based suffix
         return sprintf('ALU-%s-%05d', $year, time() % 100000);
     }
 }

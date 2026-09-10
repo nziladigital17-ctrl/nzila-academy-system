@@ -82,10 +82,12 @@ class ServiceTest extends TestCase
     {
         $service = new EnrollmentService();
 
-        $this->expectException(\RuntimeException::class);
-        $this->expectExceptionMessage('já está matriculado');
+        $service->enroll($this->student->id, $this->class->id, $this->school->id);
 
-        $service->enroll($this->student, $this->class);
+        $this->expectException(\RuntimeException::class);
+        $this->expectExceptionMessage('O aluno já está matriculado neste ano lectivo.');
+
+        $service->enroll($this->student->id, $this->class->id, $this->school->id);
     }
 
     public function test_enrollment_over_capacity_throws_exception(): void
@@ -99,12 +101,12 @@ class ServiceTest extends TestCase
         }
 
         // This should fail — class is full
-        $extraStudent = Student::factory()->create(['school_id' => $this->school->id]);
+        $student = Student::factory()->create(['school_id' => $this->school->id]);
 
         $this->expectException(\RuntimeException::class);
-        $this->expectExceptionMessage('número máximo');
+        $this->expectExceptionMessage('A turma atingiu o número máximo de alunos.');
 
-        $service->enroll($extraStudent, $this->class);
+        $service->enroll($student->id, $this->class->id, $this->school->id);
     }
 
     // ── GradeService ──

@@ -35,6 +35,9 @@ User ──belongsToMany──► Role ──belongsToMany──► Permission
 | subjects | view, create, update, delete |
 | rooms | view, create, update, delete |
 | academic_years | view, create, update, delete |
+| terms | view, create, update, delete |
+| enrollments | view, create, update, delete |
+| teaching_assignments | view, create, update, delete |
 | grades | view, create, update |
 | attendance | view, create, update |
 | finance | view, create, update, approve, delete |
@@ -48,11 +51,11 @@ User ──belongsToMany──► Role ──belongsToMany──► Permission
 |--------|-----------|
 | Super Administrador | **TODAS** |
 | Administrador da Escola | Todas excepto `schools.create` e `schools.delete` |
-| Diretor | Escolas (view), utilizadores, alunos, professores, turmas, disciplinas, salas, anos, notas, presenças, finanças, mensagens, relatórios, auditoria |
-| Coordenador Pedagógico | Alunos, encarregados, professores, turmas, disciplinas, salas, anos, notas, presenças, mensagens, relatórios |
+| Diretor | Escolas (view), utilizadores, alunos, encarregados, professores, turmas, disciplinas, salas, anos, trimestres, matrículas, atribuições, notas, presenças, finanças, mensagens, relatórios, auditoria |
+| Coordenador Pedagógico | Alunos, encarregados, professores, turmas, disciplinas, salas, anos, trimestres, matrículas, atribuições, notas, presenças, mensagens, relatórios |
 | Financeiro | Finanças (todas), alunos (view), mensagens, relatórios |
-| Secretária | Alunos (CRUD), encarregados (CRUD), utilizadores (view), turmas (view, enroll), anos (view), salas (view), mensagens |
-| Professor | Turmas (view), alunos (view), notas (CRUD), presenças (CRUD), disciplinas (view), anos (view), mensagens |
+| Secretária | Alunos (CRUD), encarregados (CRUD), utilizadores (view), turmas (view, enroll), anos (view), trimestres (view), salas (view), matrículas (CRUD), atribuições (view), mensagens |
+| Professor | Turmas (view), alunos (view), matrículas (view), notas (CRUD), presenças (CRUD), disciplinas (view), anos (view), trimestres (view), atribuições (view), mensagens |
 | Aluno | Notas (view), presenças (view), mensagens |
 | Encarregado | Notas (view), presenças (view), finanças (view), mensagens |
 

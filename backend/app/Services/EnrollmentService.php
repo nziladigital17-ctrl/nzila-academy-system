@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\AcademicYear;
 use App\Models\Enrollment;
 use App\Models\SchoolClass;
 use App\Models\Student;
@@ -10,22 +11,42 @@ use Illuminate\Support\Facades\DB;
 class EnrollmentService
 {
     /**
-     * Enroll a student in a class with transaction.
+     * Enroll a student in a class with transaction and all business rules.
      */
-    public function enroll(Student $student, SchoolClass $class): Enrollment
+    public function enroll(int $studentId, int $classId, int $schoolId): Enrollment
     {
-        return DB::transaction(function () use ($student, $class) {
-            // Check if already enrolled
-            $existing = Enrollment::where('student_id', $student->id)
-                ->where('class_id', $class->id)
-                ->first();
+        return DB::transaction(function () use ($studentId, $classId, $schoolId) {
+            // Lock the class row to prevent race conditions on capacity check
+            $class = SchoolClass::withoutGlobalScopes()->lockForUpdate()->findOrFail($classId);
+            $student = Student::withoutGlobalScopes()->findOrFail($studentId);
 
-            if ($existing) {
-                throw new \RuntimeException('O aluno já está matriculado nesta turma.');
+            // Validate same school
+            if ($student->school_id !== $class->school_id) {
+                throw new \RuntimeException('O aluno e a turma não pertencem à mesma escola.');
+            }
+
+            // Validate academic year is open
+            $academicYear = AcademicYear::withoutGlobalScopes()->find($class->academic_year_id);
+            if (!$academicYear || !$academicYear->is_current) {
+                throw new \RuntimeException('Não é possível matricular num ano lectivo fechado.');
+            }
+
+            // Check for duplicate enrollment: same student + same academic year
+            $duplicateInYear = Enrollment::withoutGlobalScopes()
+                ->where('student_id', $studentId)
+                ->whereHas('schoolClass', function ($q) use ($class) {
+                    $q->withoutGlobalScopes()->where('academic_year_id', $class->academic_year_id);
+                })
+                ->where('status', 'active')
+                ->exists();
+
+            if ($duplicateInYear) {
+                throw new \RuntimeException('O aluno já está matriculado neste ano lectivo.');
             }
 
             // Check class capacity
-            $currentCount = Enrollment::where('class_id', $class->id)
+            $currentCount = Enrollment::withoutGlobalScopes()
+                ->where('class_id', $classId)
                 ->where('status', 'active')
                 ->count();
 
@@ -34,8 +55,9 @@ class EnrollmentService
             }
 
             return Enrollment::create([
-                'student_id' => $student->id,
-                'class_id' => $class->id,
+                'school_id' => $schoolId,
+                'student_id' => $studentId,
+                'class_id' => $classId,
                 'enrolled_at' => now(),
                 'status' => 'active',
             ]);
