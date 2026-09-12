@@ -17,7 +17,11 @@
 
 ## Resultados das Validações Obrigatórias
 1. **Verificação de Tipos (tsc -b)**: Executou com **zero erros**. O contrato TypeScript reflete o strict mode.
-2. **Testes do Frontend (Vitest)**: Passaram **100%** (`4 passed`). A testagem garantiu que as propriedades do *Zustand store* e as assinaturas lógicas comportam o mock das permissões (ex: RBAC `finance.view`).
+2. **Testes do Frontend (Vitest)**: Passaram **100%** (`9 passed`). A testagem garantiu que:
+   - As propriedades do *Zustand store* e as assinaturas lógicas comportam o mock das permissões.
+   - `ProtectedRoute`: sem token redireciona para `/login`.
+   - `ProtectedRoute`: com token e sem a permissão exigida redireciona para `/403`.
+   - Interceptor Axios: resposta `401` limpa token, utilizador e permissões, e redireciona para `/login`.
 3. **Build de Produção**: `vite build` concluído com sucesso, gerando os *chunks* estáticos otimizados na pasta `dist/`. Nenhuma discrepância estrutural ou módulo omisso foi relatado.
 4. **Comandos Destrutivos**: Nenhum foi executado sobre o backend. A API da base continua funcional e estável desde a conclusão da Fase 4.
 

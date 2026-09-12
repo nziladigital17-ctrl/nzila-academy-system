@@ -60,14 +60,13 @@ O frontend estará disponível em `http://localhost:5173`.
 
 - [x] Fase 1: Fundação Técnica (Laravel + React)
 - [x] Fase 2: Estruturação Completa da API REST
-- [x] Fase 3: Frontend Base
-- [x] Fase 4: Módulo Administrativo & Recuperação
+- [x] Fase 3: Núcleo Pedagógico (avaliações, notas, presenças e resultados)
+- [x] Fase 4: Módulo Financeiro
 - [x] Fase 5: Fundação do Frontend React SPA (Autenticação, RBAC, Vite, Zustand, Vitest)
-- [ ] Fase 6: Módulo Financeiro
-- [ ] Fase 7: Comunicação
-- [ ] Fase 8: Relatórios
-- [ ] Fase 9: Portal do Aluno/Encarregado
-- [ ] Fase 10: Produção
+- [ ] Fase 6: Comunicação
+- [ ] Fase 7: Relatórios
+- [ ] Fase 8: Portal do Aluno/Encarregado
+- [ ] Fase 9: Produção
 
 ## Documentação
 
