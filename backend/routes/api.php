@@ -285,5 +285,86 @@ Route::middleware(['auth:sanctum', 'school'])->group(function () {
         Route::get('/reports/subject-mini-grade-sheet', [ReportController::class, 'subjectMiniGradeSheet']);
         Route::get('/reports/academic-alerts', [ReportController::class, 'academicAlerts']);
     });
+    // --- Phase 4: Financial Module ----------------------------------------------------------
+
+    // Tuition Plans
+    Route::middleware('permission:finance.view')->group(function () {
+        Route::get('/tuition-plans', [\App\Http\Controllers\Api\V1\Finance\TuitionPlanController::class, 'index']);
+        Route::get('/tuition-plans/{tuitionPlan}', [\App\Http\Controllers\Api\V1\Finance\TuitionPlanController::class, 'show']);
+    });
+    Route::middleware('permission:finance.create')
+        ->post('/tuition-plans', [\App\Http\Controllers\Api\V1\Finance\TuitionPlanController::class, 'store']);
+    Route::middleware('permission:finance.update')
+        ->put('/tuition-plans/{tuitionPlan}', [\App\Http\Controllers\Api\V1\Finance\TuitionPlanController::class, 'update']);
+    Route::middleware('permission:finance.delete')
+        ->delete('/tuition-plans/{tuitionPlan}', [\App\Http\Controllers\Api\V1\Finance\TuitionPlanController::class, 'destroy']);
+
+    // Invoices
+    Route::middleware('permission:finance.view')->group(function () {
+        Route::get('/invoices', [\App\Http\Controllers\Api\V1\Finance\InvoiceController::class, 'index']);
+        Route::get('/invoices/{invoice}', [\App\Http\Controllers\Api\V1\Finance\InvoiceController::class, 'show']);
+    });
+    Route::middleware('permission:finance.create')
+        ->post('/invoices', [\App\Http\Controllers\Api\V1\Finance\InvoiceController::class, 'store']);
+    Route::middleware('permission:finance.update')
+        ->put('/invoices/{invoice}', [\App\Http\Controllers\Api\V1\Finance\InvoiceController::class, 'update']);
+    Route::middleware('permission:finance.delete')
+        ->delete('/invoices/{invoice}', [\App\Http\Controllers\Api\V1\Finance\InvoiceController::class, 'destroy']);
+    Route::middleware('permission:finance.update')
+        ->post('/invoices/{invoice}/void', [\App\Http\Controllers\Api\V1\Finance\InvoiceController::class, 'void']);
+
+    // Adjustments
+    Route::middleware('permission:finance.create')
+        ->post('/invoices/{invoice}/adjustments', [\App\Http\Controllers\Api\V1\Finance\InvoiceController::class, 'adjustments']);
+    
+    // Payments
+    Route::middleware('permission:finance.view')->group(function () {
+        Route::get('/payments', [\App\Http\Controllers\Api\V1\Finance\PaymentController::class, 'index']);
+        Route::get('/payments/{payment}', [\App\Http\Controllers\Api\V1\Finance\PaymentController::class, 'show']);
+    });
+    Route::middleware('permission:finance.create')
+        ->post('/payments', [\App\Http\Controllers\Api\V1\Finance\PaymentController::class, 'store']);
+    Route::middleware('permission:finance.update')
+        ->post('/payments/{payment}/void', [\App\Http\Controllers\Api\V1\Finance\PaymentController::class, 'void']);
+    Route::middleware('permission:finance.update')
+        ->post('/payments/{payment}/refund', [\App\Http\Controllers\Api\V1\Finance\PaymentController::class, 'refund']);
+    
+    // Receipts
+    Route::middleware('permission:finance.view')->group(function () {
+        Route::get('/receipts', [\App\Http\Controllers\Api\V1\Finance\ReceiptController::class, 'index']);
+        Route::get('/receipts/{receipt}', [\App\Http\Controllers\Api\V1\Finance\ReceiptController::class, 'show']);
+        Route::get('/receipts/{receipt}/download', [\App\Http\Controllers\Api\V1\Finance\ReceiptController::class, 'download']);
+    });
+    Route::middleware('permission:finance.update')
+        ->post('/receipts/{receipt}/void', [\App\Http\Controllers\Api\V1\Finance\ReceiptController::class, 'void']);
+
+    // Expenses & Expense Categories
+    Route::middleware('permission:finance.view')->group(function () {
+        Route::get('/expense-categories', [\App\Http\Controllers\Api\V1\Finance\ExpenseCategoryController::class, 'index']);
+        Route::get('/expense-categories/{expenseCategory}', [\App\Http\Controllers\Api\V1\Finance\ExpenseCategoryController::class, 'show']);
+    });
+    Route::middleware('permission:finance.create')
+        ->post('/expense-categories', [\App\Http\Controllers\Api\V1\Finance\ExpenseCategoryController::class, 'store']);
+    Route::middleware('permission:finance.update')
+        ->put('/expense-categories/{expenseCategory}', [\App\Http\Controllers\Api\V1\Finance\ExpenseCategoryController::class, 'update']);
+    Route::middleware('permission:finance.delete')
+        ->delete('/expense-categories/{expenseCategory}', [\App\Http\Controllers\Api\V1\Finance\ExpenseCategoryController::class, 'destroy']);
+
+    Route::middleware('permission:finance.view')->group(function () {
+        Route::get('/expenses', [\App\Http\Controllers\Api\V1\Finance\ExpenseController::class, 'index']);
+        Route::get('/expenses/{expense}', [\App\Http\Controllers\Api\V1\Finance\ExpenseController::class, 'show']);
+    });
+    Route::middleware('permission:finance.create')
+        ->post('/expenses', [\App\Http\Controllers\Api\V1\Finance\ExpenseController::class, 'store']);
+    Route::middleware('permission:finance.update')
+        ->put('/expenses/{expense}', [\App\Http\Controllers\Api\V1\Finance\ExpenseController::class, 'update']);
+    Route::middleware('permission:finance.delete')
+        ->delete('/expenses/{expense}', [\App\Http\Controllers\Api\V1\Finance\ExpenseController::class, 'destroy']);
+    Route::middleware('permission:finance.update')
+        ->post('/expenses/{expense}/void', [\App\Http\Controllers\Api\V1\Finance\ExpenseController::class, 'void']);
+
 });
+
+
+
 

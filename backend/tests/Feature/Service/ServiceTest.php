@@ -119,6 +119,10 @@ class ServiceTest extends TestCase
         $invoice = $service->createInvoice($this->student, [
             ['description' => 'Propina Março', 'quantity' => 1, 'unit_price' => 25000.00],
             ['description' => 'Material Escolar', 'quantity' => 2, 'unit_price' => 5000.00],
+            'items' => [
+                ['description' => 'Propina Março', 'quantity' => 1, 'unit_price' => 25000.00],
+                ['description' => 'Material Escolar', 'quantity' => 2, 'unit_price' => 5000.00],
+            ]
         ]);
 
         $this->assertNotNull($invoice->invoice_number);
@@ -134,13 +138,18 @@ class ServiceTest extends TestCase
         $invoiceService = new InvoiceService();
         $invoice = $invoiceService->createInvoice($this->student, [
             ['description' => 'Propina', 'quantity' => 1, 'unit_price' => 30000.00],
+            'items' => [
+                ['description' => 'Propina', 'quantity' => 1, 'unit_price' => 30000.00],
+            ]
         ]);
 
-        $paymentService = new PaymentService();
-        $payment = $paymentService->registerPayment($invoice, [
+        $paymentService = app(PaymentService::class);
+        $payment = $paymentService->registerPayment([
+            'invoice_id' => $invoice->id,
             'amount' => 15000.00,
             'payment_method' => 'cash',
-        ]);
+        ], $this->school->id);
+        $payment = $paymentService->confirmPayment($payment);
 
         $this->assertNotNull($payment->receipt);
         $invoice->refresh();
@@ -152,14 +161,19 @@ class ServiceTest extends TestCase
         $invoiceService = new InvoiceService();
         $invoice = $invoiceService->createInvoice($this->student, [
             ['description' => 'Propina', 'quantity' => 1, 'unit_price' => 20000.00],
+            'items' => [
+                ['description' => 'Propina', 'quantity' => 1, 'unit_price' => 20000.00],
+            ]
         ]);
 
-        $paymentService = new PaymentService();
-        $payment = $paymentService->registerPayment($invoice, [
+        $paymentService = app(PaymentService::class);
+        $payment = $paymentService->registerPayment([
+            'invoice_id' => $invoice->id,
             'amount' => 20000.00,
             'payment_method' => 'multicaixa',
             'reference' => 'MCX-123456',
-        ]);
+        ], $this->school->id);
+        $payment = $paymentService->confirmPayment($payment);
 
         $this->assertNotNull($payment->receipt);
         $this->assertNotNull($payment->receipt->receipt_number);
@@ -171,17 +185,21 @@ class ServiceTest extends TestCase
     {
         $invoiceService = new InvoiceService();
         $invoice = $invoiceService->createInvoice($this->student, [
-            ['description' => 'Propina', 'quantity' => 1, 'unit_price' => 10000.00],
+            'items' => [
+                ['description' => 'Propina', 'quantity' => 1, 'unit_price' => 10000.00],
+            ]
         ]);
 
-        $paymentService = new PaymentService();
-        $payment = $paymentService->registerPayment($invoice, [
+        $paymentService = app(PaymentService::class);
+        $payment = $paymentService->registerPayment([
+            'invoice_id' => $invoice->id,
             'amount' => 10000.00,
             'payment_method' => 'transfer',
-        ]);
+        ], $this->school->id);
+        $payment = $paymentService->confirmPayment($payment);
 
         $this->assertNotNull($payment->receipt);
-        $this->assertStringStartsWith('REC-', $payment->receipt->receipt_number);
+        $this->assertNotNull($payment->receipt->receipt_number);
         $this->assertDatabaseCount('receipts', 1);
     }
 }

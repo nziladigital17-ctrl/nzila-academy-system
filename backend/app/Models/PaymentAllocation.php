@@ -6,23 +6,27 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Receipt extends Model
+class PaymentAllocation extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'payment_id',
-        'receipt_number',
-        'issued_at', 'status', 'voided_at', 'voided_by', 'void_reason',
+        'invoice_id',
+        'amount',
     ];
 
     protected $casts = [
-        'issued_at' => 'datetime',
+        'amount' => 'decimal:2',
     ];
 
     public function payment(): BelongsTo
     {
         return $this->belongsTo(Payment::class);
     }
-}
 
+    public function invoice(): BelongsTo
+    {
+        return $this->belongsTo(Invoice::class);
+    }
+}

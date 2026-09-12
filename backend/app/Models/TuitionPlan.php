@@ -1,32 +1,24 @@
 <?php
-
 namespace App\Models;
-
+use App\Traits\Auditable;
 use App\Traits\BelongsToSchool;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class TuitionPlan extends Model
 {
-    use HasFactory, BelongsToSchool;
-
+    use HasFactory, BelongsToSchool, Auditable;
+    public static array $periodicities = ['monthly', 'trimestral', 'annual', 'single'];
     protected $fillable = [
-        'school_id',
-        'academic_year_id',
-        'name',
-        'grade_level',
-        'amount',
-        'installments',
+        'school_id', 'academic_year_id', 'code', 'name', 'grade_level', 'amount', 
+        'periodicity', 'installments', 'due_day', 'is_active', 'description'
     ];
-
     protected $casts = [
-        'amount' => 'decimal:2',
-        'installments' => 'integer',
+        'amount' => 'decimal:2', 'is_active' => 'boolean'
     ];
-
-    public function academicYear(): BelongsTo
-    {
-        return $this->belongsTo(AcademicYear::class);
-    }
+    public function academicYear() { return $this->belongsTo(AcademicYear::class); }
+    public function assignments() { return $this->hasMany(StudentFeeAssignment::class, 'tuition_plan_id'); }
 }
+
+
+

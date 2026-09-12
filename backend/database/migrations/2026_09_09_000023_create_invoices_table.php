@@ -17,7 +17,7 @@ return new class extends Migration
             $table->decimal('subtotal', 15, 2);
             $table->decimal('discount', 15, 2)->default(0);
             $table->decimal('total', 15, 2);
-            $table->enum('status', ['pending', 'paid', 'partial', 'cancelled'])->default('pending');
+            $table->enum('status', ['pending', 'paid', 'partial', 'cancelled', 'overdue', 'voided'])->default('pending');
             $table->foreignId('issued_by')->nullable()->constrained('users')->nullOnDelete();
             $table->timestamps();
             $table->softDeletes();
@@ -31,3 +31,5 @@ return new class extends Migration
         Schema::dropIfExists('invoices');
     }
 };
+
+
