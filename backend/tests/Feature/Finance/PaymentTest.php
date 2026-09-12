@@ -127,7 +127,7 @@ $response->assertStatus(201);
     }
 
     public function test_can_void_confirmed_payment()
-    { $this->withoutExceptionHandling();
+    {
         $invoice = Invoice::factory()->create(['school_id' => $this->school->id, 'student_id' => $this->student->id, 'total' => 10000, 'status' => 'paid']);
         $payment = Payment::factory()->create(['school_id' => $this->school->id, 'invoice_id' => $invoice->id, 'amount' => 10000, 'status' => 'confirmed']);
         $receipt = Receipt::factory()->create(['payment_id' => $payment->id, 'status' => 'active']);
@@ -173,6 +173,7 @@ $response->assertStatus(201);
 
     public function test_payment_with_allocations()
     {
+        $this->withoutExceptionHandling();
         $invoice1 = Invoice::factory()->create(['school_id' => $this->school->id, 'student_id' => $this->student->id, 'total' => 5000]);
         $invoice2 = Invoice::factory()->create(['school_id' => $this->school->id, 'student_id' => $this->student->id, 'total' => 5000]);
 

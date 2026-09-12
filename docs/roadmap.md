@@ -49,14 +49,14 @@
 - [ ] Registo de presenças
 - [ ] Lançamento e consulta de notas
 
-## 📋 Fase 6 — Módulo Financeiro
+## ✅ Fase 6 — Módulo Financeiro
 
-- [ ] Planos de propinas
-- [ ] Emissão de facturas
-- [ ] Registo de pagamentos
-- [ ] Emissão de recibos
-- [ ] Controlo de despesas
-- [ ] Relatórios financeiros
+- [x] Planos de propinas
+- [x] Emissão de facturas
+- [x] Registo de pagamentos
+- [x] Emissão de recibos
+- [x] Controlo de despesas
+- [x] Relatórios financeiros
 
 ## 📋 Fase 7 — Comunicação
 

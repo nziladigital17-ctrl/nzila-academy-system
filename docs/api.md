@@ -129,6 +129,24 @@ Content-Type: application/json
 | DELETE | `/students/{id}` | Soft delete | `students.delete` | Global scope |
 | POST | `/students/{id}/guardians` | Associar encarregado | `students.update` | Validação de mesma escola |
 
+### Finanças (Fase 4/6)
+
+| Método | Endpoint | Descrição | Permissão |
+|--------|----------|-----------|-----------|
+| GET | `/tuition-plans` | Listar planos de propinas | `finance.view` |
+| POST | `/invoices` | Criar factura | `finance.create` |
+| POST | `/invoices/{id}/void` | Anular factura | `finance.update` |
+| POST | `/invoices/{id}/adjustments` | Aplicar ajuste | `finance.create` |
+| POST | `/payments` | Registar pagamento | `finance.create` |
+| POST | `/payments/{id}/void` | Anular pagamento | `finance.update` |
+| POST | `/payments/{id}/refund` | Estornar pagamento | `finance.update` |
+| GET | `/receipts/{id}/download` | Descarregar recibo | `finance.view` |
+| GET | `/debtors` | Listar devedores | `finance.view` |
+| POST | `/expenses` | Criar despesa | `finance.create` |
+| POST | `/expenses/{id}/confirm` | Confirmar despesa | `finance.update` |
+| POST | `/expenses/{id}/void` | Anular despesa | `finance.update` |
+| GET/POST | `/financial-settings` | Ver/Actualizar configurações | `finance.view`/`.update` |
+
 ## Endpoints Futuros
 
 Documentados em `routes/api.php` como placeholders:
@@ -145,10 +163,6 @@ Documentados em `routes/api.php` como placeholders:
 - `GET/POST` `/classes/{id}/assessments` — Avaliações
 - `POST` `/assessments/{id}/grades` — Lançamento de notas
 - `GET/POST` `/classes/{id}/attendance` — Presenças
-- `GET/POST` `/tuition-plans` — Planos de propinas
-- `GET/POST` `/invoices` — Facturas
-- `POST` `/invoices/{id}/payments` — Pagamentos
-- `GET/POST` `/expenses` — Despesas
 - `GET/POST` `/messages` — Mensagens internas
 - `GET` `/notifications` — Notificações
 - `GET` `/audit-logs` — Logs de auditoria

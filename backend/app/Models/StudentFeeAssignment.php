@@ -62,6 +62,5 @@ class StudentFeeAssignment extends Model
 
         return max(0, $amount);
     }
-    public function tuitionPlan() { return $this->belongsTo(TuitionPlan::class); }
 }
 

@@ -79,22 +79,19 @@ class PaymentController extends Controller
 
     public function void(VoidPaymentRequest $request, Payment $payment)
     {
-        $this->paymentService->voidPayment($payment, $request->reason);
-
-        return response()->json([
-            'message' => 'Pagamento anulado com sucesso.',
-            'data' => new PaymentResource($payment->fresh()),
-        ]);
+        try {
+            $this->paymentService->voidPayment($payment, $request->reason);
+            return response()->json([
+                'message' => 'Pagamento anulado com sucesso.',
+                'data' => new PaymentResource($payment->fresh()),
+            ]);
+        } catch (\Exception $e) {
+            return response()->json(['message' => $e->getMessage()], 422);
+        }
     }
 
     public function refund(VoidPaymentRequest $request, Payment $payment)
     {
-        $this->paymentService->refundPayment($payment, $request->reason);
-
-        return response()->json([
-            'message' => 'Pagamento reembolsado com sucesso.',
-            'data' => new PaymentResource($payment->fresh()),
-        ]);
         try {
             $this->paymentService->refundPayment($payment, $request->reason);
             return response()->json([

@@ -18,9 +18,14 @@ class PaymentService
     public function registerPayment(array $data, int $schoolId): Payment
     {
         return DB::transaction(function () use ($data, $schoolId) {
+            $invoiceId = $data['invoice_id'] ?? null;
+            if (!$invoiceId && isset($data['allocations']) && count($data['allocations']) > 0) {
+                $invoiceId = $data['allocations'][0]['invoice_id'];
+            }
+
             $payment = Payment::create([
                 'school_id' => $schoolId,
-                'invoice_id' => $data['invoice_id'] ?? null,
+                'invoice_id' => $invoiceId,
                 'amount' => $data['amount'],
                 'payment_method' => $data['payment_method'],
                 'reference' => $data['reference'] ?? null,

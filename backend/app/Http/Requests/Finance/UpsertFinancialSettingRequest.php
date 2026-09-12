@@ -16,8 +16,6 @@ class UpsertFinancialSettingRequest extends FormRequest
         return [
             'academic_year_id' => 'required|exists:academic_years,id',
             'settings' => 'required|array',
-            'settings.*.key' => 'required|string|max:100',
-            'settings.*.value' => 'nullable|string|max:1000',
             'settings.*.setting_key' => 'required|string|max:100',
             'settings.*.setting_value' => 'nullable|string|max:1000',
         ];

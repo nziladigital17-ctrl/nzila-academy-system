@@ -287,6 +287,13 @@ Route::middleware(['auth:sanctum', 'school'])->group(function () {
     });
     // --- Phase 4: Financial Module ----------------------------------------------------------
 
+    // Financial Settings
+    Route::middleware('permission:finance.view')->group(function () {
+        Route::get('/financial-settings', [\App\Http\Controllers\Api\V1\Finance\FinancialSettingController::class, 'index']);
+    });
+    Route::middleware('permission:finance.update')
+        ->post('/financial-settings', [\App\Http\Controllers\Api\V1\Finance\FinancialSettingController::class, 'upsert']);
+
     // Tuition Plans
     Route::middleware('permission:finance.view')->group(function () {
         Route::get('/tuition-plans', [\App\Http\Controllers\Api\V1\Finance\TuitionPlanController::class, 'index']);
@@ -299,10 +306,11 @@ Route::middleware(['auth:sanctum', 'school'])->group(function () {
     Route::middleware('permission:finance.delete')
         ->delete('/tuition-plans/{tuitionPlan}', [\App\Http\Controllers\Api\V1\Finance\TuitionPlanController::class, 'destroy']);
 
-    // Invoices
+    // Invoices & Debtors
     Route::middleware('permission:finance.view')->group(function () {
         Route::get('/invoices', [\App\Http\Controllers\Api\V1\Finance\InvoiceController::class, 'index']);
         Route::get('/invoices/{invoice}', [\App\Http\Controllers\Api\V1\Finance\InvoiceController::class, 'show']);
+        Route::get('/debtors', [\App\Http\Controllers\Api\V1\Finance\DebtorController::class, 'index']);
     });
     Route::middleware('permission:finance.create')
         ->post('/invoices', [\App\Http\Controllers\Api\V1\Finance\InvoiceController::class, 'store']);
@@ -362,6 +370,8 @@ Route::middleware(['auth:sanctum', 'school'])->group(function () {
         ->delete('/expenses/{expense}', [\App\Http\Controllers\Api\V1\Finance\ExpenseController::class, 'destroy']);
     Route::middleware('permission:finance.update')
         ->post('/expenses/{expense}/void', [\App\Http\Controllers\Api\V1\Finance\ExpenseController::class, 'void']);
+    Route::middleware('permission:finance.update')
+        ->post('/expenses/{expense}/confirm', [\App\Http\Controllers\Api\V1\Finance\ExpenseController::class, 'confirm']);
 
 });
 

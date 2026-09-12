@@ -21,7 +21,6 @@ class ExpenseController extends Controller
 
     public function index(Request $request)
     {
-        $query = Expense::with(['category']);
         $query = Expense::with(['expenseCategory']);
 
         if ($request->filled('expense_category_id')) {
@@ -51,9 +50,7 @@ class ExpenseController extends Controller
             $data['school_id'] = auth()->user()->school_id;
         }
 
-        $expense = $this->expenseService->createExpense($data);
-        $expense = $this->expenseService->createExpense($data, auth()->user()->school_id);
-        $expense = $this->expenseService->createExpense($data, auth()->user()->school_id);
+        $expense = $this->expenseService->createExpense($data, $data['school_id']);
 
         return response()->json([
             'message' => 'Despesa criada com sucesso.',
@@ -104,12 +101,6 @@ class ExpenseController extends Controller
 
     public function void(VoidExpenseRequest $request, Expense $expense)
     {
-        $this->expenseService->voidExpense($expense, $request->reason);
-
-        return response()->json([
-            'message' => 'Despesa anulada com sucesso.',
-            'data' => new ExpenseResource($expense->fresh()),
-        ]);
         try {
             $this->expenseService->voidExpense($expense, $request->reason);
             return response()->json([

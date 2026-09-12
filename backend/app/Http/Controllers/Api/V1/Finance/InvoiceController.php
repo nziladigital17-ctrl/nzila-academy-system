@@ -76,12 +76,6 @@ class InvoiceController extends Controller
 
     public function void(VoidInvoiceRequest $request, Invoice $invoice)
     {
-        $this->invoiceService->voidInvoice($invoice, $request->reason);
-
-        return response()->json([
-            'message' => 'Fatura anulada com sucesso.',
-            'data' => new InvoiceResource($invoice->fresh()),
-        ]);
         try {
             $this->invoiceService->voidInvoice($invoice, $request->reason);
             return response()->json([
@@ -95,13 +89,7 @@ class InvoiceController extends Controller
 
     public function adjustments(StoreFinancialAdjustmentRequest $request, Invoice $invoice)
     {
-        $adjustment = $this->invoiceService->applyAdjustment($invoice, $request->validated());
-
-        return response()->json([
-            'message' => 'Ajuste aplicado com sucesso.',
-            'data' => new FinancialAdjustmentResource($adjustment),
-        ]);
-try {
+        try {
             $adjustment = $this->invoiceService->applyAdjustment($invoice, $request->validated());
             return response()->json([
                 'message' => 'Ajuste aplicado com sucesso.',
