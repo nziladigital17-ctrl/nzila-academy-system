@@ -1,0 +1,171 @@
+/* ============================================================
+   Nzila Academy — Design System Tokens
+   Based on Stitch Export: DESIGN.md
+   ============================================================ */
+
+:root {
+  /* ── Brand Colours ───────────────────────────────────────── */
+  --nz-primary:           #123B63;  /* Deep Institutional Navy */
+  --nz-primary-hover:     #0E2D4C;
+  --nz-primary-light:     #1A4A7A;
+  --nz-action:            #246B9B;  /* Medium Ocean Blue — interactive */
+  --nz-action-hover:      #1D5A84;
+  --nz-action-light:      rgba(36, 107, 155, 0.15);
+  --nz-gold:              #E5A93D;  /* Academic Gold — accent */
+  --nz-gold-hover:        #D49A2E;
+  --nz-gold-bg:           rgba(229, 169, 61, 0.15);
+
+  /* ── Surfaces ────────────────────────────────────────────── */
+  --nz-bg:                #F6F8FB;  /* Canvas — Ice White */
+  --nz-surface:           #FFFFFF;  /* Cards & Sheets */
+  --nz-surface-hover:     #F8FAFC;  /* Row hover */
+  --nz-surface-dim:       #D0DBED;
+  --nz-surface-container: #E6EEFF;
+  --nz-border:            #E2E8F0;  /* Structural Slate */
+  --nz-border-hover:      #246B9B;
+
+  /* ── Typography Neutrals ─────────────────────────────────── */
+  --nz-text:              #1F2937;  /* Deep Graphite — primary text */
+  --nz-text-secondary:    #4B5563;  /* Labels, table headers */
+  --nz-text-muted:        #6B7280;  /* Subtext, metadata */
+  --nz-text-inverse:      #FFFFFF;
+  --nz-text-on-primary:   #FFFFFF;
+
+  /* ── Semantic Feedback ───────────────────────────────────── */
+  --nz-success:           #15803D;
+  --nz-success-bg:        #DCFCE7;
+  --nz-warning:           #D97706;
+  --nz-warning-bg:        #FEF3C7;
+  --nz-error:             #DC2626;
+  --nz-error-bg:          #FEE2E2;
+  --nz-error-hover:       #B91C1C;
+  --nz-info:              #246B9B;
+  --nz-info-bg:           #E6EEFF;
+
+  /* ── Typography — Font Families ──────────────────────────── */
+  --nz-font-heading:      'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --nz-font-body:         'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* ── Typography — Headline Scales (Plus Jakarta Sans) ───── */
+  --nz-headline-xl-size:         36px;
+  --nz-headline-xl-weight:       700;
+  --nz-headline-xl-line:         44px;
+  --nz-headline-xl-tracking:     -0.02em;
+
+  --nz-headline-xl-mobile-size:  28px;
+  --nz-headline-xl-mobile-weight: 700;
+  --nz-headline-xl-mobile-line:  36px;
+  --nz-headline-xl-mobile-tracking: -0.01em;
+
+  --nz-headline-lg-size:         28px;
+  --nz-headline-lg-weight:       600;
+  --nz-headline-lg-line:         36px;
+  --nz-headline-lg-tracking:     -0.015em;
+
+  --nz-headline-md-size:         22px;
+  --nz-headline-md-weight:       600;
+  --nz-headline-md-line:         30px;
+  --nz-headline-md-tracking:     -0.01em;
+
+  --nz-headline-sm-size:         18px;
+  --nz-headline-sm-weight:       600;
+  --nz-headline-sm-line:         26px;
+  --nz-headline-sm-tracking:     0;
+
+  /* ── Typography — Body & Label Scales (Inter) ────────────── */
+  --nz-body-lg-size:      16px;
+  --nz-body-lg-weight:    400;
+  --nz-body-lg-line:      24px;
+
+  --nz-body-md-size:      14px;
+  --nz-body-md-weight:    400;
+  --nz-body-md-line:      20px;
+
+  --nz-body-sm-size:      12px;
+  --nz-body-sm-weight:    400;
+  --nz-body-sm-line:      18px;
+
+  --nz-label-lg-size:     14px;
+  --nz-label-lg-weight:   600;
+  --nz-label-lg-line:     20px;
+  --nz-label-lg-tracking: 0.01em;
+
+  --nz-label-md-size:     12px;
+  --nz-label-md-weight:   600;
+  --nz-label-md-line:     16px;
+  --nz-label-md-tracking: 0.02em;
+
+  --nz-label-sm-size:     11px;
+  --nz-label-sm-weight:   600;
+  --nz-label-sm-line:     14px;
+  --nz-label-sm-tracking: 0.03em;
+
+  /* ── Spacing — 8pt Grid ──────────────────────────────────── */
+  --nz-space-0:    0;
+  --nz-space-1:    4px;    /* 0.5 × 8 */
+  --nz-space-2:    8px;    /* 1 × 8 */
+  --nz-space-3:    12px;   /* 1.5 × 8 */
+  --nz-space-4:    16px;   /* 2 × 8 */
+  --nz-space-5:    20px;   /* 2.5 × 8 */
+  --nz-space-6:    24px;   /* 3 × 8 — gutter */
+  --nz-space-8:    32px;   /* 4 × 8 — margin */
+  --nz-space-10:   40px;
+  --nz-space-12:   48px;
+  --nz-space-16:   64px;
+  --nz-space-20:   80px;
+  --nz-space-24:   96px;
+
+  /* ── Named Spacing ───────────────────────────────────────── */
+  --nz-gutter:         var(--nz-space-6);    /* 24px */
+  --nz-gutter-mobile:  var(--nz-space-4);    /* 16px */
+  --nz-margin:         var(--nz-space-8);    /* 32px */
+  --nz-margin-mobile:  var(--nz-space-4);    /* 16px */
+
+  /* ── Border Radius ───────────────────────────────────────── */
+  --nz-radius-sm:    4px;    /* 0.25rem */
+  --nz-radius:       8px;    /* 0.5rem — default */
+  --nz-radius-md:    10px;   /* buttons, inputs */
+  --nz-radius-lg:    14px;   /* cards, tables, modals */
+  --nz-radius-xl:    24px;   /* 1.5rem */
+  --nz-radius-full:  9999px; /* pills, badges */
+
+  /* ── Elevation — Navy-tinted Shadows ─────────────────────── */
+  /* Level 0: Flat canvas (no shadow) */
+  /* Level 1: Default surface */
+  --nz-shadow-1:     0 1px 3px 0 rgba(18, 59, 99, 0.04),
+                     0 1px 2px -1px rgba(18, 59, 99, 0.02);
+  /* Level 2: Hover & floating */
+  --nz-shadow-2:     0 4px 6px -1px rgba(18, 59, 99, 0.07),
+                     0 2px 4px -2px rgba(18, 59, 99, 0.05);
+  /* Level 3: Modals & overlays */
+  --nz-shadow-3:     0 20px 25px -5px rgba(18, 59, 99, 0.12),
+                     0 8px 10px -6px rgba(18, 59, 99, 0.08);
+
+  /* ── Backdrop ────────────────────────────────────────────── */
+  --nz-backdrop:     rgba(18, 59, 99, 0.45);
+
+  /* ── Transitions ─────────────────────────────────────────── */
+  --nz-transition-fast:    150ms ease;
+  --nz-transition-normal:  200ms ease;
+  --nz-transition-slow:    300ms ease;
+
+  /* ── Z-Index Scale ───────────────────────────────────────── */
+  --nz-z-dropdown:   100;
+  --nz-z-sticky:     200;
+  --nz-z-modal:      300;
+  --nz-z-toast:      400;
+
+  /* ── Layout ──────────────────────────────────────────────── */
+  --nz-sidebar-width:      260px;
+  --nz-sidebar-collapsed:  64px;
+  --nz-header-height:      64px;
+  --nz-input-height:       42px;
+  --nz-row-height:         48px;
+}
+
+/* ── Breakpoints (reference — used in media queries) ──────── */
+/*
+  Mobile:  < 768px
+  Tablet:  768px — 1023px
+  Desktop: >= 1024px
+*/

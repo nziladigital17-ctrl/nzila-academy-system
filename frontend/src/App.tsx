@@ -1,9 +1,12 @@
 
 import { AppRouter } from './routes';
+import { ToastProvider } from '@/components/ui/Toast';
 
 function App() {
   return (
-    <AppRouter />
+    <ToastProvider>
+      <AppRouter />
+    </ToastProvider>
   );
 }
 

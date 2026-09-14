@@ -63,8 +63,8 @@ O frontend estará disponível em `http://localhost:5173`.
 - [x] Fase 3: Núcleo Pedagógico (avaliações, notas, presenças e resultados)
 - [x] Fase 4: Módulo Financeiro
 - [x] Fase 5: Fundação do Frontend React SPA (Autenticação, RBAC, Vite, Zustand, Vitest)
-- [ ] Fase 6: Comunicação
-- [ ] Fase 7: Relatórios
+- [x] Fase 6: Frontend - Estrutura Académica, Alunos e Matrículas (Fase 6A & 6B)
+- [ ] Fase 7: Frontend - Pedagógico e Financeiro
 - [ ] Fase 8: Portal do Aluno/Encarregado
 - [ ] Fase 9: Produção
 

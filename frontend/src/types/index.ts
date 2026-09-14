@@ -26,3 +26,7 @@ export interface ApiError {
   message: string;
   errors?: Record<string, string[]>;
 }
+
+export * from './student';
+export * from './guardian';
+export * from './enrollment';

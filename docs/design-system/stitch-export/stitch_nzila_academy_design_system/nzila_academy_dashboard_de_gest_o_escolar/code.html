@@ -1,0 +1,533 @@
+<!DOCTYPE html><html lang="pt" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Nzila Academy - Gestão Escolar</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-primary-fixed-variant":"#234871","tertiary":"#332100","tertiary-fixed-dim":"#fabc4e","surface-container-lowest":"#ffffff","on-primary":"#ffffff","on-error-container":"#93000a","tertiary-container":"#4f3500","on-error":"#ffffff","primary":"#002546","secondary-fixed-dim":"#92ccff","error":"#ba1a1a","error-container":"#ffdad6","on-secondary-fixed-variant":"#004b73","outline":"#73777f","on-tertiary-container":"#d3992e","surface-dim":"#d0dbed","on-surface":"#121c2a","on-secondary":"#ffffff","surface-bright":"#f8f9ff","on-secondary-fixed":"#001d31","secondary-container":"#8ccaff","on-surface-variant":"#43474e","surface-container":"#e6eeff","on-secondary-container":"#005582","surface-tint":"#3d608a","surface-container-highest":"#d9e3f6","inverse-surface":"#27313f","secondary-fixed":"#cce5ff","surface-container-low":"#eff4ff","outline-variant":"#c3c6cf","surface-variant":"#d9e3f6","on-background":"#121c2a","primary-container":"#123b63","surface":"#f8f9ff","primary-fixed-dim":"#a6c9f9","surface-container-high":"#dee9fc","on-primary-container":"#83a6d4","background":"#f8f9ff","tertiary-fixed":"#ffdead","inverse-on-surface":"#eaf1ff","on-tertiary-fixed-variant":"#604100","on-tertiary-fixed":"#281900","on-primary-fixed":"#001c37","primary-fixed":"#d2e4ff","inverse-primary":"#a6c9f9","on-tertiary":"#ffffff","secondary":"#186393"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"gutter":"1.5rem","space-lg":"1.5rem","space-sm":"0.5rem","margin-mobile":"1rem","space-md":"1rem","margin":"2rem","gutter-mobile":"1rem","space-xs":"0.25rem","space-xl":"2rem"},fontFamily:{"body-lg":["Inter"],"body-md":["Inter"],"headline-xl":["Plus Jakarta Sans"],"label-lg":["Inter"],"headline-xl-mobile":["Plus Jakarta Sans"],"label-sm":["Inter"],"headline-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-sm":["Inter"],"label-md":["Inter"],"headline-sm":["Plus Jakarta Sans"]},fontSize:{"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-xl":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"600"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-md":["22px",{"lineHeight":"30px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"headline-sm":["18px",{"lineHeight":"26px","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-primary text-on-primary z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="px-space-lg pt-space-lg pb-space-md flex items-center gap-space-sm"><div class="w-10 h-10 rounded-lg bg-tertiary-fixed text-tertiary flex items-center justify-center font-headline-sm text-headline-sm font-bold shadow-sm">NA</div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-primary tracking-tight font-bold">Nzila Academy</span><span class="font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-wider">Gestão Escolar</span></div></div><div class="px-space-md py-space-sm"><div class="bg-primary-container/80 rounded-xl p-space-sm flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-tertiary-fixed-dim text-[20px]">calendar_today</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-primary-container leading-none">Ano lectivo</span><span class="font-label-lg text-label-lg text-on-primary font-semibold">2026</span></div></div><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span><button aria-label="Mudar ano lectivo" class="text-on-primary-container hover:text-on-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">unfold_more</span></button></div></div></div><div class="px-space-md pt-space-sm"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-on-primary-container font-semibold">Menu Principal</span></div><nav class="flex flex-col gap-space-xs px-space-md pt-space-xs" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-lg"><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg bg-secondary text-on-primary font-semibold shadow-sm transition-colors border-l-4 border-tertiary-fixed-dim" data-path="visao-geral" href="#"><span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim">dashboard</span><span class="font-body-md text-body-md text-on-primary font-bold">Visão Geral</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-primary-container hover:text-on-primary transition-colors" data-path="estrutura-academica" href="#"><span class="material-symbols-outlined text-[20px]">account_tree</span><span class="font-body-md text-body-md">Estrutura Académica</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-primary-container hover:text-on-primary transition-colors" data-path="pessoas" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span class="font-body-md text-body-md">Pessoas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-primary-container hover:text-on-primary transition-colors" data-path="matriculas" href="#"><span class="material-symbols-outlined text-[20px]">how_to_reg</span><span class="font-body-md text-body-md">Matrículas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-primary-container hover:text-on-primary transition-colors" data-path="pedagogico" href="#"><span class="material-symbols-outlined text-[20px]">menu_book</span><span class="font-body-md text-body-md">Pedagógico</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-primary-container hover:text-on-primary transition-colors" data-path="financeiro" href="#"><span class="material-symbols-outlined text-[20px]">payments</span><span class="font-body-md text-body-md">Financeiro</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-primary-container hover:text-on-primary transition-colors" data-path="relatorios" href="#"><span class="material-symbols-outlined text-[20px]">analytics</span><span class="font-body-md text-body-md">Relatórios</span></a></nav></div><div class="px-space-md pb-space-lg flex flex-col gap-space-sm"><div class="bg-primary-container/40 rounded-lg p-space-sm flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary-fixed-dim text-[18px]">help_outline</span><span class="font-body-sm text-body-sm text-secondary-fixed-dim">Suporte Técnico</span></div><span class="font-label-sm text-label-sm text-on-primary-container font-semibold">24/7</span></div><div class="flex items-center justify-between px-space-xs"><span class="font-label-sm text-label-sm text-on-primary-container">República de Angola</span><span class="font-label-sm text-label-sm text-secondary-fixed-dim font-mono">v2.4</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter"><div class="flex-1 max-w-lg"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-space-sm text-outline text-[20px]">search</span><input class="w-full h-10 pl-10 pr-space-md bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary/20 transition-all" placeholder="Pesquisar aluno, processo, turma ou professor..." type="text"></div></div><div class="flex items-center gap-space-md"><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-high rounded-full"><span class="material-symbols-outlined text-primary text-[18px]">apartment</span><span class="font-label-sm text-label-sm text-on-surface font-semibold">Campus Central - Luanda</span><span class="material-symbols-outlined text-outline text-[16px]">expand_more</span></div><button class="flex items-center gap-space-xs bg-primary text-on-primary px-space-md py-2 rounded-lg font-label-md text-label-md hover:bg-primary-container hover:text-on-primary transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span class="">Novo registo</span></button><button aria-label="Notificações" class="relative p-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-full transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-error rounded-full ring-2 ring-surface-container-lowest"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Dr. Gaspar Manuel</span><div class="flex items-center justify-end gap-1"><span class="px-1.5 py-0.2 bg-tertiary-fixed text-tertiary font-label-sm text-label-sm rounded-full font-bold text-[10px]">DIREÇÃO</span><span class="font-body-sm text-body-sm text-on-surface-variant leading-none">Geral</span></div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-16 min-h-screen bg-background w-full px-gutter py-space-lg"><div class="flex flex-col w-full">
+<!-- Toast Notificação Demonstrativo Fixo -->
+<div class="fixed bottom-6 right-6 z-50 flex items-center gap-space-sm bg-surface-container-lowest text-on-surface px-space-md py-space-sm rounded-xl shadow-xl transition-all duration-300 transform translate-y-0" id="toast-demo">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div class="flex flex-col pr-space-sm">
+<span class="font-label-md text-label-md text-primary font-bold">Matrícula confirmada com sucesso</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Recibo nº 2026/0892 emitido para Teresa Ndongala</span>
+</div>
+<button class="text-outline hover:text-on-surface p-1 transition-colors" onclick="document.getElementById('toast-demo').style.display='none'">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<!-- 1. CABEÇALHO DO CONTEÚDO -->
+<header class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md mb-space-lg">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-tertiary font-label-sm text-label-sm font-bold tracking-wider">PAINEL EXECUTIVO</span>
+<span class="text-outline font-body-sm text-body-sm">•</span>
+<span class="font-body-sm text-body-sm text-secondary font-semibold">Nzila Academy Luanda</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight mt-1">Bom dia, Direção</h1>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed-dim">event</span>
+<span class="">Quinta-feira, 26 de Fevereiro de 2026</span>
+<span class="">•</span>
+<span class="font-semibold text-primary">Ano lectivo 2026</span>
+<span class="">•</span>
+<span class="text-on-tertiary-container bg-tertiary-fixed/30 px-2 py-0.5 rounded-full font-label-sm text-label-sm">1.º Trimestre em curso</span>
+</p>
+</div>
+<div class="flex items-center gap-space-sm self-start lg:self-center">
+<button class="flex items-center gap-space-xs px-space-md py-2.5 rounded-xl bg-surface-container-lowest text-primary shadow-sm hover:bg-surface-container-low transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">file_download</span>
+<span class="font-label-md text-label-md">Descarregar Resumo Trimestral</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2.5 rounded-xl bg-primary text-on-primary shadow-md hover:bg-primary-container transition-all" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span class="">Novo registo</span></button>
+</div>
+</header>
+<!-- 2. CARTÕES DE RESUMO (KPIs Principais) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md mb-space-lg">
+<!-- Card 1: Alunos Ativos -->
+<div class="relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-md transition-all">
+<div class="absolute top-0 left-0 right-0 h-[3px] bg-secondary"></div>
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Alunos Ativos</span>
+<span class="font-headline-lg text-headline-lg text-primary font-bold mt-1">1.482</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">school</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<div class="flex items-center gap-1 text-on-tertiary-fixed-variant bg-tertiary-fixed/40 px-2 py-0.5 rounded-full font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span class="">+4.2% vs. 2025</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">98% da lotação</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 98%;"></div>
+</div>
+</div>
+<!-- Card 2: Turmas em Funcionamento -->
+<div class="relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-md transition-all">
+<div class="absolute top-0 left-0 right-0 h-[3px] bg-primary"></div>
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Turmas Regulares</span>
+<span class="font-headline-lg text-headline-lg text-primary font-bold mt-1">48 Turmas</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">meeting_room</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Primário, I.º e II.º Ciclos</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-container font-semibold">2 Turnos</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 85%;"></div>
+</div>
+</div>
+<!-- Card 3: Propinas em Atraso -->
+<div class="relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-md transition-all">
+<div class="absolute top-0 left-0 right-0 h-[3px] bg-tertiary-fixed-dim"></div>
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Propinas em Atraso</span>
+<span class="font-headline-lg text-headline-lg text-error font-bold mt-1">184 <span class="font-headline-sm text-headline-sm font-normal text-on-surface-variant">processos</span></span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-error-container/50 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[22px]">pending_actions</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Kz 14.850.000</span>
+<a class="font-label-sm text-label-sm text-secondary hover:underline flex items-center gap-0.5" href="#">
+          Cobranças <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</a>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-tertiary-fixed-dim h-full rounded-full" style="width: 24%;"></div>
+</div>
+</div>
+<!-- Card 4: Média de Assiduidade Geral -->
+<div class="relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-md transition-all">
+<div class="absolute top-0 left-0 right-0 h-[3px] bg-secondary-container"></div>
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Assiduidade Geral</span>
+<span class="font-headline-lg text-headline-lg text-primary font-bold mt-1">94.6%</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">checklist_rtl</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<div class="flex items-center gap-1 text-on-primary-fixed bg-secondary-fixed px-2 py-0.5 rounded-full font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+<span class="">+1.2% este mês</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold">Meta Atingida</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 94.6%;"></div>
+</div>
+</div>
+</section>
+<!-- 3. SEÇÃO PRINCIPAL (Grid 12 colunas: 8 cols esquerda / 4 cols direita) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg mb-space-xl">
+<!-- COLUNA ESQUERDA (8 colunas) -->
+<div class="xl:col-span-8 flex flex-col gap-space-lg">
+<!-- a) Painel Evolução de Matrículas por Mês -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Evolução de Matrículas por Mês</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ano lectivo 2026: Matrículas Novas vs. Confirmações de Matrícula</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-1.5 text-body-sm font-body-sm text-on-surface-variant">
+<span class="w-3 h-3 rounded bg-primary"></span>
+<span class="">Novas Matrículas</span>
+</div>
+<div class="flex items-center gap-1.5 text-body-sm font-body-sm text-on-surface-variant">
+<span class="w-3 h-3 rounded bg-secondary-container"></span>
+<span class="">Confirmações</span>
+</div>
+<span class="px-2.5 py-1 bg-surface-container-low rounded-lg font-label-sm text-label-sm text-primary font-semibold">Total: Kz 78.4M</span>
+</div>
+</div>
+<!-- Gráfico SVG Customizado com Escala de Meses -->
+<div class="w-full bg-surface-container-low/50 rounded-xl p-space-md">
+<div class="relative h-56 w-full flex items-end justify-between px-space-md pt-4">
+<!-- Linhas de Apoio Tracejadas -->
+<div class="absolute inset-x-space-md top-4 bottom-8 flex flex-col justify-between pointer-events-none opacity-30">
+<div class="w-full h-px bg-outline-variant"></div>
+<div class="w-full h-px bg-outline-variant"></div>
+<div class="w-full h-px bg-outline-variant"></div>
+<div class="w-full h-px bg-outline-variant"></div>
+</div>
+<!-- Mês 1: Nov 2025 -->
+<div class="flex flex-col items-center gap-2 z-10 w-1/6">
+<div class="text-[10px] font-mono text-on-surface-variant">142 total</div>
+<div class="flex items-end gap-1.5 h-36">
+<div class="w-5 bg-primary rounded-t" style="height: 38%;" title="Novas: 54"></div>
+<div class="w-5 bg-secondary-container rounded-t" style="height: 62%;" title="Confirmações: 88"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Nov</span>
+</div>
+<!-- Mês 2: Dez 2025 -->
+<div class="flex flex-col items-center gap-2 z-10 w-1/6">
+<div class="text-[10px] font-mono text-on-surface-variant">298 total</div>
+<div class="flex items-end gap-1.5 h-36">
+<div class="w-5 bg-primary rounded-t" style="height: 55%;" title="Novas: 110"></div>
+<div class="w-5 bg-secondary-container rounded-t" style="height: 80%;" title="Confirmações: 188"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Dez</span>
+</div>
+<!-- Mês 3: Jan 2026 (Pico) -->
+<div class="flex flex-col items-center gap-2 z-10 w-1/6">
+<div class="text-[10px] font-mono text-on-tertiary-container font-bold">584 total</div>
+<div class="flex items-end gap-1.5 h-36">
+<div class="w-5 bg-primary rounded-t relative" style="height: 85%;" title="Novas: 240">
+<span class="absolute -top-4 left-1/2 transform -translate-x-1/2 text-[9px] font-bold text-primary">Pico</span>
+</div>
+<div class="w-5 bg-secondary-container rounded-t" style="height: 100%;" title="Confirmações: 344"></div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold">Jan</span>
+</div>
+<!-- Mês 4: Fev 2026 (Atual) -->
+<div class="flex flex-col items-center gap-2 z-10 w-1/6">
+<div class="text-[10px] font-mono text-on-surface-variant">368 total</div>
+<div class="flex items-end gap-1.5 h-36">
+<div class="w-5 bg-primary rounded-t" style="height: 60%;" title="Novas: 138"></div>
+<div class="w-5 bg-secondary-container rounded-t" style="height: 75%;" title="Confirmações: 230"></div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold underline decoration-tertiary-fixed-dim decoration-2">Fev</span>
+</div>
+<!-- Mês 5: Março (Projeção) -->
+<div class="flex flex-col items-center gap-2 z-10 w-1/6">
+<div class="text-[10px] font-mono text-outline">90 proj.</div>
+<div class="flex items-end gap-1.5 h-36 opacity-50">
+<div class="w-5 bg-primary rounded-t border-t-2 border-dashed border-primary-fixed-dim" style="height: 25%;" title="Projetadas Novas: 30"></div>
+<div class="w-5 bg-secondary-container rounded-t border-t-2 border-dashed border-secondary" style="height: 40%;" title="Projetadas Conf.: 60"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Mar</span>
+</div>
+</div>
+</div>
+<!-- Indicadores de Vagas por Ciclo -->
+<div class="grid grid-cols-3 gap-space-sm mt-space-md pt-space-xs"><div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Ensino Primário</span><span class="font-label-sm text-label-sm text-secondary font-bold">99%</span></div><div class="w-full bg-surface-container-highest h-1 rounded-full mt-1.5"><div class="bg-secondary h-1 rounded-full" style="width: 99%;"></div></div><span class="text-[11px] text-outline mt-1">4 vagas remanescentes</span></div><div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">I.º Ciclo do Ensino Secundário</span><span class="font-label-sm text-label-sm text-secondary font-bold">96%</span></div><div class="w-full bg-surface-container-highest h-1 rounded-full mt-1.5"><div class="bg-secondary h-1 rounded-full" style="width: 96%;"></div></div><span class="text-[11px] text-outline mt-1">16 vagas remanescentes</span></div><div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">II.º Ciclo do Ensino Secundário — Curso Geral ou Técnico</span><span class="font-label-sm text-label-sm text-secondary font-bold">94%</span></div><div class="w-full bg-surface-container-highest h-1 rounded-full mt-1.5"><div class="bg-secondary h-1 rounded-full" style="width: 94%;"></div></div><span class="text-[11px] text-outline mt-1">21 vagas remanescentes</span></div></div>
+</section>
+<!-- b) Tabela 'Próximas Atividades & Gestão Escolar' -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Barra de Controles e Filtros -->
+<div class="p-space-md flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Próximas Atividades &amp; Gestão Escolar</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ano lectivo 2026: Matrículas Novas vs. Confirmações de Matrícula</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface text-label-sm font-label-sm hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span class="">Filtros Avançados</span>
+</button>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-low text-primary text-label-sm font-label-sm hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span class="">Exportar</span>
+</button>
+</div>
+</div>
+<!-- Filtros Rápidos -->
+<div class="px-space-md pb-space-sm flex flex-wrap items-center gap-space-sm">
+<div class="relative flex-1 min-w-[200px]">
+<span class="material-symbols-outlined absolute left-2.5 top-2.5 text-outline text-[18px]">search</span>
+<input class="w-full h-9 pl-9 pr-3 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-secondary transition-all" placeholder="Filtrar atividade ou responsável..." type="text">
+</div>
+<div class="flex items-center gap-space-xs">
+<select class="h-9 px-3 bg-surface-container-low rounded-lg font-label-sm text-label-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-secondary"><option class="">Todos os Ciclos</option><option class="">Ensino Primário</option><option class="">I.º Ciclo do Ensino Secundário</option><option class="">II.º Ciclo do Ensino Secundário</option></select>
+<select class="h-9 px-3 bg-surface-container-low rounded-lg font-label-sm text-label-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-secondary">
+<option>Todos os Status</option>
+<option>Concluído</option>
+<option>Em Curso</option>
+<option>Pendente</option>
+<option>Atrasado</option>
+</select>
+</div>
+</div>
+<!-- Tabela -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-space-md">Atividade / Evento</th>
+<th class="py-3 px-space-sm">Coordenação</th>
+<th class="py-3 px-space-sm">Público-Alvo</th>
+<th class="py-3 px-space-sm">Data Limite</th>
+<th class="py-3 px-space-sm">Status</th>
+<th class="py-3 px-space-md text-right">Ações</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface font-body-sm text-body-sm">
+<!-- Linha 1 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-space-md font-semibold text-primary">
+<div class="flex flex-col">
+<span class="">Lançamento das Pautas 1º Mini-Teste</span>
+<span class="text-[11px] text-outline font-normal">Avaliação formativa do 1.º Trimestre</span>
+</div>
+</td>
+<td class="py-3 px-space-sm text-on-surface-variant">Prof. João Kiaku (Pedagógica)</td>
+<td class="py-3 px-space-sm"><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">7ª à 9ª Classe</span></td>
+<td class="py-3 px-space-sm font-mono text-on-surface">28 Fev 2026</td>
+<td class="py-3 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Em Curso
+                  </span>
+</td>
+<td class="py-3 px-space-md text-right">
+<div class="flex items-center justify-end gap-1 text-on-surface-variant">
+<button aria-label="Visualizar" class="p-1 hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">visibility</span></button>
+<button aria-label="Editar" class="p-1 hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button aria-label="Mais opções" class="p-1 hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">more_vert</span></button>
+</div>
+</td>
+</tr>
+<!-- Linha 2 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-space-md font-semibold text-primary">
+<div class="flex flex-col">
+<span class="">Reunião de Encarregados de Educação</span>
+<span class="text-[11px] text-outline font-normal">Alinhamento pedagógico e normas de convivência</span>
+</div>
+</td>
+<td class="py-3 px-space-sm text-on-surface-variant">Dra. Maria Sebastião</td>
+<td class="py-3 px-space-sm"><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Primário Geral</span></td>
+<td class="py-3 px-space-sm font-mono text-on-surface">02 Mar 2026</td>
+<td class="py-3 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span> Pendente
+                  </span>
+</td>
+<td class="py-3 px-space-md text-right">
+<div class="flex items-center justify-end gap-1 text-on-surface-variant">
+<button aria-label="Visualizar" class="p-1 hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">visibility</span></button>
+<button aria-label="Editar" class="p-1 hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button aria-label="Mais opções" class="p-1 hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">more_vert</span></button>
+</div>
+</td>
+</tr>
+<!-- Linha 3 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-space-md font-semibold text-primary">
+<div class="flex flex-col">
+<span class="">Auditoria Interna dos Diários de Turma</span>
+<span class="text-[11px] text-outline font-normal">Inspeção quinzenal de sumários e assiduidade docente</span>
+</div>
+</td>
+<td class="py-3 px-space-sm text-on-surface-variant">Coordenação Geral</td>
+<td class="py-3 px-space-sm"><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Docentes (48 turmas)</span></td>
+<td class="py-3 px-space-sm font-mono text-error font-semibold">24 Fev 2026</td>
+<td class="py-3 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Atrasado
+                  </span>
+</td>
+<td class="py-3 px-space-md text-right">
+<div class="flex items-center justify-end gap-1 text-on-surface-variant">
+<button aria-label="Visualizar" class="p-1 hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">visibility</span></button>
+<button aria-label="Editar" class="p-1 hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button aria-label="Mais opções" class="p-1 hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">more_vert</span></button>
+</div>
+</td>
+</tr>
+<!-- Linha 4 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-space-md font-semibold text-primary">
+<div class="flex flex-col">
+<span class="">Emissão de Cartões de Estudante com Chip</span>
+<span class="text-[11px] text-outline font-normal">Acesso biométrico aos portões e biblioteca</span>
+</div>
+</td>
+<td class="py-3 px-space-sm text-on-surface-variant">Secretaria Académica</td>
+<td class="py-3 px-space-sm"><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Novos Alunos</span></td>
+<td class="py-3 px-space-sm font-mono text-on-surface">15 Fev 2026</td>
+<td class="py-3 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Concluído
+                  </span>
+</td>
+<td class="py-3 px-space-md text-right">
+<div class="flex items-center justify-end gap-1 text-on-surface-variant">
+<button aria-label="Visualizar" class="p-1 hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">visibility</span></button>
+<button aria-label="Editar" class="p-1 hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button aria-label="Mais opções" class="p-1 hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">more_vert</span></button>
+</div>
+</td>
+</tr>
+<!-- Linha 5 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-space-md font-semibold text-primary">
+<div class="flex flex-col">
+<span class="">Validação de Bolsas de Estudo (Governo Provincial)</span>
+<span class="text-[11px] text-outline font-normal">Conferência documental de 45 candidatos</span>
+</div>
+</td>
+<td class="py-3 px-space-sm text-on-surface-variant">Gabinete Jurídico &amp; Social</td>
+<td class="py-3 px-space-sm"><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">Candidatos a Bolsa</span></td>
+<td class="py-3 px-space-sm font-mono text-on-surface">05 Mar 2026</td>
+<td class="py-3 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Em Curso
+                  </span>
+</td>
+<td class="py-3 px-space-md text-right">
+<div class="flex items-center justify-end gap-1 text-on-surface-variant">
+<button aria-label="Visualizar" class="p-1 hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">visibility</span></button>
+<button aria-label="Editar" class="p-1 hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button aria-label="Mais opções" class="p-1 hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">more_vert</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Paginação -->
+<div class="px-space-md py-space-sm bg-surface-container-low/40 flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+            A mostrar <span class="font-semibold text-primary">1-5</span> de <span class="font-semibold text-primary">24</span> atividades
+          </span>
+<div class="flex items-center gap-1">
+<button aria-label="Página Anterior" class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors disabled:opacity-40" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-bold flex items-center justify-center" type="button">1</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm flex items-center justify-center hover:bg-surface-container-high transition-colors" type="button">2</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm flex items-center justify-center hover:bg-surface-container-high transition-colors" type="button">3</button>
+<span class="px-1 text-outline">...</span>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm flex items-center justify-center hover:bg-surface-container-high transition-colors" type="button">5</button>
+<button aria-label="Próxima Página" class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- COLUNA DIREITA (4 colunas) -->
+<div class="xl:col-span-4 flex flex-col gap-space-lg">
+<!-- a) Quadro de Alertas Académicos & Administrativos -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-error text-[20px]">notifications_active</span>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Quadro de Alertas</h2>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">4 Prioridades</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Alerta 1: Âmbar -->
+<div class="p-space-sm rounded-xl bg-tertiary-fixed/30 flex items-start gap-space-sm hover:bg-tertiary-fixed/40 transition-colors">
+<div class="w-8 h-8 rounded-lg bg-tertiary-fixed text-tertiary flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-tertiary font-bold">Faltas Injustificadas Acumuladas</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">12 alunos com mais de 5 faltas na <span class="font-semibold">10ª Classe B</span>. Coordenação notificada para convocação dos tutores.</p>
+<span class="text-[10px] text-outline mt-1 font-mono">Há 25 minutos • Turma B Manhã</span>
+</div>
+</div>
+<!-- Alerta 2: Verde -->
+<div class="p-space-sm rounded-xl bg-secondary-fixed/30 flex items-start gap-space-sm hover:bg-secondary-fixed/40 transition-colors">
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed text-primary flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">Pautas de Matemática Homologadas</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">Mini-teste do Iº Ciclo validado pelo coordenador pedagógico e disponível para consulta no portal dos encarregados.</p>
+<span class="text-[10px] text-outline mt-1 font-mono">Hoje, 09:15 • 7ª e 8ª Classes</span>
+</div>
+</div>
+<!-- Alerta 3: Vermelho -->
+<div class="p-space-sm rounded-xl bg-error-container/40 flex items-start gap-space-sm hover:bg-error-container/50 transition-colors">
+<div class="w-8 h-8 rounded-lg bg-error-container text-error flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">error</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-error font-bold">Sumários Pedagógicos Pendentes</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">3 turmas da disciplina de Física sem registo de sumário no diário de classe digital há mais de 7 dias úteis.</p>
+<span class="text-[10px] text-outline mt-1 font-mono">Gabinete de Inspeção Pedagógica</span>
+</div>
+</div>
+<!-- Alerta 4: Azul -->
+<div class="p-space-sm rounded-xl bg-secondary-fixed/30 flex items-start gap-space-sm hover:bg-secondary-fixed/40 transition-colors">
+<div class="w-8 h-8 rounded-lg bg-secondary-container text-on-secondary-container flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-secondary font-bold">Fecho de Cobrança de Fevereiro</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">Prazo limite para liquidação de propina de Fevereiro sem aplicação de juros de mora encerra em 48 horas.</p>
+<span class="text-[10px] text-outline mt-1 font-mono">Tesouraria Central</span>
+</div>
+</div>
+</div>
+</section>
+<!-- b) Acesso Rápido da Secretaria -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col">
+<div class="flex items-center justify-between mb-space-md">
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Acesso Rápido da Secretaria</h2>
+<span class="material-symbols-outlined text-outline text-[20px]">bolt</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<button class="p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col items-start gap-2 text-left group" type="button">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest text-secondary group-hover:bg-primary group-hover:text-on-primary transition-all flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]">description</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-semibold leading-snug">Emitir Declaração com Notas</span>
+<span class="text-[11px] text-on-surface-variant leading-none">Chancela e assinatura digital</span>
+</button>
+<button class="p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col items-start gap-2 text-left group" type="button">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest text-secondary group-hover:bg-primary group-hover:text-on-primary transition-all flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]">swap_horiz</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-semibold leading-snug">Transferência de Aluno</span>
+<span class="text-[11px] text-on-surface-variant leading-none">Guia de transferência oficial</span>
+</button>
+<button class="p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col items-start gap-2 text-left group" type="button">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest text-secondary group-hover:bg-primary group-hover:text-on-primary transition-all flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-semibold leading-snug">Conselho Pedagógico</span>
+<span class="text-[11px] text-on-surface-variant leading-none">Convocatória e pauta do dia</span>
+</button>
+<button class="p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col items-start gap-2 text-left group" type="button">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest text-secondary group-hover:bg-primary group-hover:text-on-primary transition-all flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-semibold leading-snug">Efectividade Docente</span>
+<span class="text-[11px] text-on-surface-variant leading-none">Folha de ponto e presenças</span>
+</button>
+</div>
+<div class="mt-space-md p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">support_agent</span>
+<span class="font-body-sm text-body-sm text-on-surface">Terminal da Secretaria Central</span>
+</div>
+<span class="font-mono text-[11px] text-on-surface-variant">Ramal 204</span>
+</div>
+</section>
+<!-- Mini-Banner de Apoio Institucional com Imagem de Estudantes Angolanos -->
+<div class="relative rounded-xl overflow-hidden bg-primary shadow-sm text-on-primary p-space-md flex items-center gap-space-md">
+<div class="relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-primary-container">
+<img class="w-full h-full object-cover" data-alt="High quality institutional photography of bright Angolan high school students in navy blue academy uniforms actively collaborating over textbooks inside an illuminated modern classroom in Luanda, warm soft sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAZtL5xfiUJYx-B4q4zElke3UA2Ti_Y4g_IPrmgZnNQuUbEOEtFe4G8GzOpWvm2IUa5R1ndpMaHKiDwrKcxh1rEbknViO6wt0xsfIUHvRQqqsDjBsSE4N99qCZIR3pDtdmDp6NmthzjBJEFFa9D5NvYHu15e5G3sx41eihXioe-fYeBiBf_DwAVsgzo2QL1qb3s2Z3W_blWzaKcB676NDkppF7ezmrtwbkIVUtHF3tUmJlGui5UYlygQ">
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-tertiary-fixed font-bold uppercase tracking-wider">Excelência Académica</span>
+<span class="font-label-lg text-label-lg font-bold leading-snug">Programa de Monitoria e Tutoria 2026</span>
+<a class="font-body-sm text-body-sm text-secondary-fixed-dim hover:underline mt-1 flex items-center gap-1" href="#">
+            Ver regulamento de mérito <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- 4. SEÇÃO INFERIOR DEDICADA: ESPECIFICAÇÃO DO DESIGN SYSTEM & BIBLIOTECA DE COMPONENTES -->
+
+</div></main></div>
+
+</body></html>

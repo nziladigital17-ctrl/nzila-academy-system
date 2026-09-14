@@ -1,0 +1,1075 @@
+<!DOCTYPE html><html lang="pt" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Nzila Academy - Gestão Escolar</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-primary-fixed-variant":"#234871","tertiary":"#332100","tertiary-fixed-dim":"#fabc4e","surface-container-lowest":"#ffffff","on-primary":"#ffffff","on-error-container":"#93000a","tertiary-container":"#4f3500","on-error":"#ffffff","primary":"#002546","secondary-fixed-dim":"#92ccff","error":"#ba1a1a","error-container":"#ffdad6","on-secondary-fixed-variant":"#004b73","outline":"#73777f","on-tertiary-container":"#d3992e","surface-dim":"#d0dbed","on-surface":"#121c2a","on-secondary":"#ffffff","surface-bright":"#f8f9ff","on-secondary-fixed":"#001d31","secondary-container":"#8ccaff","on-surface-variant":"#43474e","surface-container":"#e6eeff","on-secondary-container":"#005582","surface-tint":"#3d608a","surface-container-highest":"#d9e3f6","inverse-surface":"#27313f","secondary-fixed":"#cce5ff","surface-container-low":"#eff4ff","outline-variant":"#c3c6cf","surface-variant":"#d9e3f6","on-background":"#121c2a","primary-container":"#123b63","surface":"#f8f9ff","primary-fixed-dim":"#a6c9f9","surface-container-high":"#dee9fc","on-primary-container":"#83a6d4","background":"#f8f9ff","tertiary-fixed":"#ffdead","inverse-on-surface":"#eaf1ff","on-tertiary-fixed-variant":"#604100","on-tertiary-fixed":"#281900","on-primary-fixed":"#001c37","primary-fixed":"#d2e4ff","inverse-primary":"#a6c9f9","on-tertiary":"#ffffff","secondary":"#186393"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"gutter":"1.5rem","space-lg":"1.5rem","space-sm":"0.5rem","margin-mobile":"1rem","space-md":"1rem","margin":"2rem","gutter-mobile":"1rem","space-xs":"0.25rem","space-xl":"2rem"},fontFamily:{"body-lg":["Inter"],"body-md":["Inter"],"headline-xl":["Plus Jakarta Sans"],"label-lg":["Inter"],"headline-xl-mobile":["Plus Jakarta Sans"],"label-sm":["Inter"],"headline-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-sm":["Inter"],"label-md":["Inter"],"headline-sm":["Plus Jakarta Sans"]},fontSize:{"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-xl":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"600"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-md":["22px",{"lineHeight":"30px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"headline-sm":["18px",{"lineHeight":"26px","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-primary text-on-primary z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="px-space-lg pt-space-lg pb-space-md flex items-center gap-space-sm"><div class="w-10 h-10 rounded-lg bg-tertiary-fixed text-tertiary flex items-center justify-center font-headline-sm text-headline-sm font-bold shadow-sm">NA</div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-primary tracking-tight font-bold">Nzila Academy</span><span class="font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-wider">Gestão Escolar</span></div></div><div class="px-space-md py-space-sm"><div class="bg-primary-container/80 rounded-xl p-space-sm flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-tertiary-fixed-dim text-[20px]">calendar_today</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-primary-container leading-none">Ano lectivo</span><span class="font-label-lg text-label-lg text-on-primary font-semibold">2026</span></div></div><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span><button aria-label="Mudar ano lectivo" class="text-on-primary-container hover:text-on-primary transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">unfold_more</span></button></div></div></div><div class="px-space-md pt-space-sm"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-on-primary-container font-semibold">Menu Principal</span></div><nav class="flex flex-col gap-space-xs px-space-md pt-space-xs" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-lg"><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-primary-container hover:text-on-primary transition-colors" data-path="visao-geral" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-body-md text-body-md">Visão Geral</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-primary-container hover:text-on-primary transition-colors" data-path="estrutura-academica" href="#"><span class="material-symbols-outlined text-[20px]">account_tree</span><span class="font-body-md text-body-md">Estrutura Académica</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-primary-container hover:text-on-primary transition-colors" data-path="pessoas" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span class="font-body-md text-body-md">Pessoas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-primary-container hover:text-on-primary transition-colors" data-path="matriculas" href="#"><span class="material-symbols-outlined text-[20px]">how_to_reg</span><span class="font-body-md text-body-md">Matrículas</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-primary-container hover:text-on-primary transition-colors" data-path="pedagogico" href="#"><span class="material-symbols-outlined text-[20px]">menu_book</span><span class="font-body-md text-body-md">Pedagógico</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-primary-container hover:text-on-primary transition-colors" data-path="financeiro" href="#"><span class="material-symbols-outlined text-[20px]">payments</span><span class="font-body-md text-body-md">Financeiro</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-secondary-fixed-dim hover:bg-primary-container hover:text-on-primary transition-colors" data-path="relatorios" href="#"><span class="material-symbols-outlined text-[20px]">analytics</span><span class="font-body-md text-body-md">Relatórios</span></a></nav></div><div class="px-space-md pb-space-lg flex flex-col gap-space-sm"><div class="bg-primary-container/40 rounded-lg p-space-sm flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary-fixed-dim text-[18px]">help_outline</span><span class="font-body-sm text-body-sm text-secondary-fixed-dim">Suporte Técnico</span></div><span class="font-label-sm text-label-sm text-on-primary-container font-semibold">24/7</span></div><div class="flex items-center justify-between px-space-xs"><span class="font-label-sm text-label-sm text-on-primary-container">República de Angola</span><span class="font-label-sm text-label-sm text-secondary-fixed-dim font-mono">v2.4</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter"><div class="flex-1 max-w-lg"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-space-sm text-outline text-[20px]">search</span><input class="w-full h-10 pl-10 pr-space-md bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary/20 transition-all" placeholder="Pesquisar aluno, processo, turma ou professor..." type="text"></div></div><div class="flex items-center gap-space-md"><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-high rounded-full"><span class="material-symbols-outlined text-primary text-[18px]">apartment</span><span class="font-label-sm text-label-sm text-on-surface font-semibold">Campus Central - Luanda</span><span class="material-symbols-outlined text-outline text-[16px]">expand_more</span></div><button class="flex items-center gap-space-xs bg-primary text-on-primary px-space-md py-2 rounded-lg font-label-md text-label-md hover:bg-primary-container hover:text-on-primary transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span class="">Novo registo</span></button><button aria-label="Notificações" class="relative p-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-full transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-error rounded-full ring-2 ring-surface-container-lowest"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Dr. Gaspar Manuel</span><div class="flex items-center justify-end gap-1"><span class="px-1.5 py-0.2 bg-tertiary-fixed text-tertiary font-label-sm text-label-sm rounded-full font-bold text-[10px]">DIREÇÃO</span><span class="font-body-sm text-body-sm text-on-surface-variant leading-none">Geral</span></div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-16 min-h-screen bg-background w-full px-gutter py-space-lg"><div class="flex flex-col w-full gap-space-xl">
+<!-- Top Hero & Context Header -->
+<header class="relative rounded-2xl bg-surface-container-lowest shadow-sm p-space-xl overflow-hidden">
+<div class="absolute -right-16 -top-16 w-80 h-80 rounded-full bg-secondary-fixed-dim/20 blur-3xl pointer-events-none"></div>
+<div class="absolute -left-12 -bottom-12 w-64 h-64 rounded-full bg-tertiary-fixed/30 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="px-space-sm py-1 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm tracking-wide">
+            VERSÃO 2.4 (ESTÁVEL)
+          </span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span> WCAG 2.1 AA
+          </span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+            Grid 8px Base
+          </span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+            Raio 10px Padrão
+          </span>
+<span class="px-space-sm py-1 rounded-full bg-tertiary-fixed text-tertiary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">flag</span> Angola (AO)
+          </span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-surface-container-low text-primary hover:bg-surface-container transition-all font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span class="">Exportar Tokens (.json)</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container transition-all font-label-md text-label-md shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">code</span><span class="">Novo registo</span></button>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs max-w-4xl">
+<h1 class="font-headline-xl text-headline-xl text-primary tracking-tight">
+          Biblioteca do Design System &amp; Especificação Técnica
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">Manual institucional de interface e engenharia de software para o Nzila Academy. Concebido com rigor pedagógico, acessibilidade e usabilidade para escolas angolanas para desktop, tablets e telemóveis.</p>
+</div>
+<!-- Navigation Tabs (Controlled via simple JS for interactive preview) -->
+<nav aria-label="Abas do Sistema de Design" class="flex items-center gap-space-xs pt-space-md overflow-x-auto" id="ds-nav-tabs">
+<button class="tab-btn px-space-md py-2.5 rounded-lg font-label-md text-label-md font-semibold text-on-primary bg-primary shadow-sm transition-all flex items-center gap-space-xs whitespace-nowrap" data-tab="fundamentos" type="button"><span class="material-symbols-outlined text-[18px]">code</span><span class="">Novo registo</span></button>
+<button class="tab-btn px-space-md py-2.5 rounded-lg font-label-md text-label-md font-semibold text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all flex items-center gap-space-xs whitespace-nowrap" data-tab="componentes" type="button">
+<span class="material-symbols-outlined text-[18px]">smart_button</span>
+          2. Botões &amp; Badges
+        </button>
+<button class="tab-btn px-space-md py-2.5 rounded-lg font-label-md text-label-md font-semibold text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all flex items-center gap-space-xs whitespace-nowrap" data-tab="formularios" type="button">
+<span class="material-symbols-outlined text-[18px]">fact_check</span>
+          3. Formulários &amp; Validação
+        </button>
+<button class="tab-btn px-space-md py-2.5 rounded-lg font-label-md text-label-md font-semibold text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all flex items-center gap-space-xs whitespace-nowrap" data-tab="dados" type="button">
+<span class="material-symbols-outlined text-[18px]">table_chart</span>
+          4. KPIs &amp; Tabelas
+        </button>
+<button class="tab-btn px-space-md py-2.5 rounded-lg font-label-md text-label-md font-semibold text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all flex items-center gap-space-xs whitespace-nowrap" data-tab="feedback" type="button">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+          5. Modais &amp; Feedback
+        </button>
+<button class="tab-btn px-space-md py-2.5 rounded-lg font-label-md text-label-md font-semibold text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all flex items-center gap-space-xs whitespace-nowrap" data-tab="responsividade" type="button">
+<span class="material-symbols-outlined text-[18px]">devices</span>
+          6. Diretrizes Responsivas
+        </button>
+</nav>
+</div>
+</header>
+<!-- SECTION 1: Paleta de Cores e Tokens Visuais -->
+<section class="ds-section flex flex-col gap-space-lg" id="tab-fundamentos">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Secção 1 • Fundamentos</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Paleta Institucional &amp; Escala Geométrica</h2>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Base 8px • Rácio WCAG AA ≥ 4.5:1</span>
+</div>
+<!-- Color Tokens Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Primária Institucional -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between h-48 group hover:shadow-md transition-all">
+<div class="flex items-start justify-between">
+<div class="w-14 h-14 rounded-xl bg-[#123B63] shadow-sm flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[24px]">account_balance</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-primary font-mono">14.8:1</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Azul Marinho Profundo</span>
+<span class="font-label-md text-label-md text-secondary font-mono">#123B63 • var(--color-primary)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Autoridade e governação académica escolar.</span>
+</div>
+</div>
+<!-- Secundária / Ação -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between h-48 group hover:shadow-md transition-all">
+<div class="flex items-start justify-between">
+<div class="w-14 h-14 rounded-xl bg-[#246B9B] shadow-sm flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[24px]">touch_app</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-primary font-mono">5.2:1</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Azul Médio</span>
+<span class="font-label-md text-label-md text-secondary font-mono">#246B9B • var(--color-secondary)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Ações secundárias, ligações e botões de suporte.</span>
+</div>
+</div>
+<!-- Destaque / Mérito -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between h-48 group hover:shadow-md transition-all">
+<div class="flex items-start justify-between">
+<div class="w-14 h-14 rounded-xl bg-[#E5A93D] shadow-sm flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[24px]">workspace_premium</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-primary font-mono">Accent</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Dourado Discreto</span>
+<span class="font-label-md text-label-md text-on-tertiary-container font-mono">#E5A93D • var(--color-gold)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Mérito estudantil, distinção e quadro de honra.</span>
+</div>
+</div>
+<!-- Fundo Aplicação -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between h-48 group hover:shadow-md transition-all">
+<div class="flex items-start justify-between">
+<div class="w-14 h-14 rounded-xl bg-[#F6F8FB] shadow-inner flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-[24px]">wallpaper</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-primary font-mono">Nível 0</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Branco-Gelo</span>
+<span class="font-label-md text-label-md text-outline font-mono">#F6F8FB • var(--color-bg)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Superfície base de descanso visual prolongado.</span>
+</div>
+</div>
+<!-- Sucesso Pedagógico -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between h-48 group hover:shadow-md transition-all">
+<div class="flex items-start justify-between">
+<div class="w-14 h-14 rounded-xl bg-[#15803D] shadow-sm flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[24px]">check_circle</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-primary font-mono">Semântico</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Verde Aprovado</span>
+<span class="font-label-md text-label-md text-secondary font-mono">#15803D • var(--color-success)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Transição de classe, matrículas validadas.</span>
+</div>
+</div>
+<!-- Alerta / Aviso -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between h-48 group hover:shadow-md transition-all">
+<div class="flex items-start justify-between">
+<div class="w-14 h-14 rounded-xl bg-[#D97706] shadow-sm flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[24px]">warning</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-primary font-mono">Semântico</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Âmbar Pendência</span>
+<span class="font-label-md text-label-md text-secondary font-mono">#D97706 • var(--color-warning)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Documentos em falta, processos por assinar.</span>
+</div>
+</div>
+<!-- Erro / Perigo -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between h-48 group hover:shadow-md transition-all">
+<div class="flex items-start justify-between">
+<div class="w-14 h-14 rounded-xl bg-[#DC2626] shadow-sm flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[24px]">cancel</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-primary font-mono">Semântico</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Vermelho Crítico</span>
+<span class="font-label-md text-label-md text-error font-mono">#DC2626 • var(--color-danger)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Anulação de processo, recusa disciplinar.</span>
+</div>
+</div>
+<!-- Texto Institucional -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between h-48 group hover:shadow-md transition-all">
+<div class="flex items-start justify-between">
+<div class="w-14 h-14 rounded-xl bg-[#1F2937] shadow-sm flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[24px]">format_size</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-primary font-mono">Texto Principal</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Grafite • Neutro 900</span>
+<span class="font-label-md text-label-md text-secondary font-mono">#1F2937 • var(--color-text-main)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Contraste ótimo sobre superfícies brancas.</span>
+</div>
+</div>
+</div>
+<!-- Escala Geométrica e Espaçamento -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+<!-- Border Radius -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">rounded_corner</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Escala de Arredondamento (Border Radius)</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Padrões geométricos contidos para manter a seriedade académica sem arestas agressivas.</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm pt-space-xs">
+<div class="flex flex-col items-center p-space-sm bg-surface-container-low rounded-lg text-center gap-2">
+<div class="w-12 h-12 bg-primary rounded-[6px] shadow-sm flex items-center justify-center text-on-primary text-[11px] font-mono">6px</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Tags / Micro</span>
+<span class="font-body-sm text-body-sm text-outline font-mono">--radius-sm</span>
+</div>
+<div class="flex flex-col items-center p-space-sm bg-surface-container-low rounded-lg text-center gap-2">
+<div class="w-12 h-12 bg-primary rounded-[8px] shadow-sm flex items-center justify-center text-on-primary text-[11px] font-mono">8px</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Botões / Inputs</span>
+<span class="font-body-sm text-body-sm text-outline font-mono">--radius-base</span>
+</div>
+<div class="flex flex-col items-center p-space-sm bg-surface-container-low rounded-lg text-center gap-2">
+<div class="w-12 h-12 bg-primary rounded-[10px] shadow-sm flex items-center justify-center text-on-primary text-[11px] font-mono">10px</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Cartões (Card)</span>
+<span class="font-body-sm text-body-sm text-outline font-mono">--radius-md</span>
+</div>
+<div class="flex flex-col items-center p-space-sm bg-surface-container-low rounded-lg text-center gap-2">
+<div class="w-12 h-12 bg-primary rounded-full shadow-sm flex items-center justify-center text-on-primary text-[11px] font-mono">9999</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Pílulas / Status</span>
+<span class="font-body-sm text-body-sm text-outline font-mono">--radius-full</span>
+</div>
+</div>
+</div>
+<!-- Spacing Scale 8px -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">space_bar</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Ritmo Vertical • Escala Base 8px</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Grelha modular uniforme para alinhamentos harmónicos entre formulários e tabelas.
+        </p>
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<span class="font-label-md text-label-md text-primary font-mono">8px • space-xs</span>
+<div class="w-8 h-3 bg-secondary rounded"></div>
+<span class="font-body-sm text-body-sm text-outline font-mono">gap-space-xs</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<span class="font-label-md text-label-md text-primary font-mono">16px • space-sm</span>
+<div class="w-16 h-3 bg-secondary rounded"></div>
+<span class="font-body-sm text-body-sm text-outline font-mono">gap-space-sm</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<span class="font-label-md text-label-md text-primary font-mono">24px • space-md</span>
+<div class="w-24 h-3 bg-secondary rounded"></div>
+<span class="font-body-sm text-body-sm text-outline font-mono">gap-space-md</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<span class="font-label-md text-label-md text-primary font-mono">32px • space-lg</span>
+<div class="w-32 h-3 bg-secondary rounded"></div>
+<span class="font-body-sm text-body-sm text-outline font-mono">gap-space-lg</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: Botões, Badges e Tags -->
+<section class="ds-section flex flex-col gap-space-lg" id="tab-componentes">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Secção 2 • Interações</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Botões, estados e indicadores</h2>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tokens Interativos</span>
+</div>
+<!-- Buttons Grid Matrix -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Matriz de Estados de Botão</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Variações para operações principais, secundárias, mérito e exclusão.</p>
+</div>
+<span class="font-label-sm text-label-sm px-3 py-1 bg-surface-container text-secondary font-mono rounded-full">Altura padrão: 42px</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Coluna 1: Primário -->
+<div class="flex flex-col gap-space-sm p-space-md rounded-xl bg-surface-container-low">
+<span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Primário (#123B63)</span>
+<button class="w-full h-[42px] px-space-md rounded-[8px] bg-primary text-on-primary font-label-md text-label-md shadow-sm flex items-center justify-center gap-space-xs transition-all hover:bg-primary-container" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span class="">Confirmar Matrícula</span>
+</button>
+<button class="w-full h-[42px] px-space-md rounded-[8px] bg-primary-container text-on-primary font-label-md text-label-md shadow-md ring-2 ring-secondary/30 flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">touch_app</span>
+<span class="">Estado Foco / Hover</span>
+</button>
+<button class="w-full h-[42px] px-space-md rounded-[8px] bg-surface-container-highest text-outline font-label-md text-label-md cursor-not-allowed flex items-center justify-center gap-space-xs" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span class="">Desativado (Disabled)</span>
+</button>
+</div>
+<!-- Coluna 2: Secundário / Ghost -->
+<div class="flex flex-col gap-space-sm p-space-md rounded-xl bg-surface-container-low">
+<span class="font-label-md text-label-md text-secondary font-bold uppercase tracking-wider">Secundário (#246B9B)</span>
+<button class="w-full h-[42px] px-space-md rounded-[8px] bg-surface-container-lowest text-secondary font-label-md text-label-md shadow-sm flex items-center justify-center gap-space-xs transition-all hover:bg-surface-container" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span class="">Exportar Pauta PDF</span>
+</button>
+<button class="w-full h-[42px] px-space-md rounded-[8px] bg-secondary-fixed text-primary font-label-md text-label-md ring-2 ring-secondary flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+<span class="">A Processar...</span>
+</button>
+<button class="w-full h-[42px] px-space-md rounded-[8px] bg-surface-container-lowest/50 text-outline font-label-md text-label-md cursor-not-allowed flex items-center justify-center gap-space-xs" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">block</span>
+<span class="">Sem Permissão</span>
+</button>
+</div>
+<!-- Coluna 3: Dourado Mérito -->
+<div class="flex flex-col gap-space-sm p-space-md rounded-xl bg-surface-container-low">
+<span class="font-label-md text-label-md text-tertiary-container font-bold uppercase tracking-wider">Dourado Mérito (#E5A93D)</span>
+<button class="w-full h-[42px] px-space-md rounded-[8px] bg-tertiary-fixed-dim text-tertiary font-label-md text-label-md font-bold shadow-sm flex items-center justify-center gap-space-xs transition-all hover:bg-tertiary-fixed" type="button">
+<span class="material-symbols-outlined text-[18px]">military_tech</span>
+<span class="">Atribuir Bolsa Mérito</span>
+</button>
+<button class="w-full h-[42px] px-space-md rounded-[8px] bg-tertiary text-on-tertiary font-label-md text-label-md ring-2 ring-tertiary-fixed-dim flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="">Distinção e Louvor</span>
+</button>
+<button class="w-full h-[42px] px-space-md rounded-[8px] bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span class="">Emitir Certificado</span>
+</button>
+</div>
+<!-- Coluna 4: Perigo / Ação Crítica -->
+<div class="flex flex-col gap-space-sm p-space-md rounded-xl bg-surface-container-low">
+<span class="font-label-md text-label-md text-error font-bold uppercase tracking-wider">Ação de Perigo (#DC2626)</span>
+<button class="w-full h-[42px] px-space-md rounded-[8px] bg-error text-on-error font-label-md text-label-md shadow-sm flex items-center justify-center gap-space-xs transition-all hover:opacity-90" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+<span class="">Anular Matrícula</span>
+</button>
+<button class="w-full h-[42px] px-space-md rounded-[8px] bg-error-container text-on-error-container font-label-md text-label-md flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+<span class="">Reverter Registo</span>
+</button>
+<div class="flex items-center gap-2">
+<button class="flex-1 h-[42px] rounded-[8px] bg-surface-container-high text-error hover:bg-error-container flex items-center justify-center transition-colors" title="Eliminar Linha" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+<button class="flex-1 h-[42px] rounded-[8px] bg-surface-container-high text-secondary hover:bg-secondary-fixed flex items-center justify-center transition-colors" title="Histórico" type="button">
+<span class="material-symbols-outlined text-[20px]">history</span>
+</button>
+<button class="flex-1 h-[42px] rounded-[8px] bg-surface-container-high text-on-surface hover:bg-surface-container flex items-center justify-center transition-colors" title="Mais Opções" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Badges e Etiquetas de Estado Angolanas -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Badges de Estado Escolar (República de Angola)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Estados recomendados para fichas de alunos, processos de secretaria e atas de avaliação.</p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm pt-space-xs">
+<!-- 1. Matrícula Confirmada -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#DCFCE7] text-[#15803D] font-label-sm text-label-sm font-semibold shadow-xs">
+<span class="w-2 h-2 rounded-full bg-[#15803D]"></span>
+          Matrícula Confirmada
+        </span>
+<!-- 2. Pendente Validação -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FEF3C7] text-[#D97706] font-label-sm text-label-sm font-semibold shadow-xs">
+<span class="w-2 h-2 rounded-full bg-[#D97706] animate-pulse"></span>
+          Pendente Validação
+        </span>
+<!-- 3. Cancelado / Anulado -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FEE2E2] text-[#DC2626] font-label-sm text-label-sm font-semibold shadow-xs">
+<span class="material-symbols-outlined text-[14px]">cancel</span>
+          Cancelado / Anulado
+        </span>
+<!-- 4. Bolseiro de Mérito -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FEF9C3] text-[#B45309] font-label-sm text-label-sm font-bold shadow-xs">
+<span class="material-symbols-outlined text-[14px] text-[#E5A93D]">star</span>
+          Bolseiro de Mérito
+        </span>
+<!-- 5. Transferido -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold shadow-xs">
+<span class="material-symbols-outlined text-[14px]">swap_horiz</span>
+          Transferido (Campus Maianga)
+        </span>
+<!-- 6. Em Curso -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold shadow-xs"><span class="w-2 h-2 rounded-full bg-secondary"></span>
+          Ano lectivo em curso
+        </span>
+</div>
+</div>
+</section>
+<!-- SECTION 3: Inputs, Seletores e Validação de Formulário -->
+<section class="ds-section flex flex-col gap-space-lg" id="tab-formularios">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Secção 3 • Entrada de Dados</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Formulários &amp; Validações Angolanas</h2>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Altura 42px • Foco Halo Suave</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col gap-space-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+<!-- Campo Normal: N.º de Processo Individual -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-primary font-semibold flex items-center justify-between">
+<span class="">N.º de Processo Individual</span>
+<span class="text-outline font-normal text-body-sm">Automático</span>
+</label>
+<div class="relative flex items-center">
+<span class="absolute left-3 text-secondary material-symbols-outlined text-[18px]">badge</span>
+<input class="w-full h-[42px] pl-10 pr-3 rounded-[8px] bg-surface-container-low text-primary font-label-md text-label-md focus:outline-none cursor-default font-mono" readonly="" type="text" value="NZL-2026-04891">
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Identificador interno único do processo do estudante</span>
+</div>
+<!-- Seletor Dropdown: Ciclo de Ensino -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-primary font-semibold">
+            Ciclo de Ensino <span class="text-error">*</span>
+</label>
+<div class="relative flex items-center">
+<span class="absolute left-3 text-on-surface-variant material-symbols-outlined text-[18px]">school</span>
+<select class="w-full h-[42px] pl-10 pr-10 rounded-[8px] bg-surface-container-lowest text-primary font-body-md text-body-md shadow-xs appearance-none focus:outline-none focus:bg-surface-container-low transition-all">
+<option value="pri">Ensino Primário (1.ª à 6.ª Classe)</option>
+<option value="ciclo1">I.º Ciclo do Ensino Secundário (7.ª à 9.ª Classe)</option>
+<option selected="" value="ciclo2" class="">II.º Ciclo do Ensino Secundário — Curso Geral ou Técnico</option>
+</select>
+<span class="absolute right-3 text-outline pointer-events-none material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Define matriz curricular e carga horária letiva.</span>
+</div>
+<!-- Campo com Erro: Validação do B.I. Angolano -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-error font-semibold flex items-center justify-between">
+<span class="">Bilhete de Identidade (BI)</span>
+<span class="font-label-sm text-label-sm text-error uppercase font-bold">Erro de Sintaxe</span>
+</label>
+<div class="relative flex items-center">
+<span class="absolute left-3 text-error material-symbols-outlined text-[18px]">id_card</span>
+<input class="w-full h-[42px] pl-10 pr-10 rounded-[8px] bg-error-container/20 text-error font-label-md text-label-md font-mono focus:outline-none" type="text" value="004829102LA">
+<span class="absolute right-3 text-error material-symbols-outlined text-[20px]">error</span>
+</div>
+<span class="font-body-sm text-body-sm text-error leading-tight flex items-start gap-1"><span class="material-symbols-outlined text-[14px] mt-0.5 shrink-0">info</span> Validação conforme a configuração da escola.</span>
+</div>
+</div>
+<!-- Checkboxes & Radios Institucionais -->
+<div class="pt-space-md grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<div class="flex flex-col gap-space-sm p-space-md rounded-xl bg-surface-container-low">
+<span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Confirmações &amp; Termos de Matrícula</span>
+<label class="flex items-start gap-space-sm cursor-pointer select-none">
+<div class="relative flex items-center justify-center w-5 h-5 mt-0.5 rounded bg-primary text-on-primary">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-semibold">Certificado com Notas Originais Entregue</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Documento entregue e sujeito à validação da escola.</span>
+</div>
+</label>
+<label class="flex items-start gap-space-sm cursor-pointer select-none pt-2">
+<div class="relative flex items-center justify-center w-5 h-5 mt-0.5 rounded bg-surface-container-lowest shadow-inner"></div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Declaração de Vacinas Atualizada</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Comprovativo de vacinação emitido pelo posto de saúde.</span>
+</div>
+</label>
+</div>
+<div class="flex flex-col gap-space-sm p-space-md rounded-xl bg-surface-container-low">
+<span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Período Letivo Pretendido (Turno)</span>
+<div class="grid grid-cols-3 gap-space-sm">
+<label class="flex flex-col p-space-sm rounded-lg bg-surface-container-lowest shadow-xs cursor-pointer hover:bg-surface transition-all">
+<div class="flex items-center justify-between mb-1">
+<span class="w-3.5 h-3.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-secondary font-mono">07h-12h</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">Manhã</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">14 Vagas</span>
+</label>
+<label class="flex flex-col p-space-sm rounded-lg bg-surface-container-lowest shadow-xs cursor-pointer hover:bg-surface transition-all">
+<div class="flex items-center justify-between mb-1">
+<span class="w-3.5 h-3.5 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-outline font-mono">12h-17h</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Tarde</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">32 Vagas</span>
+</label>
+<label class="flex flex-col p-space-sm rounded-lg bg-surface-container-lowest shadow-xs cursor-pointer hover:bg-surface transition-all">
+<div class="flex items-center justify-between mb-1">
+<span class="w-3.5 h-3.5 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-outline font-mono">17h-21h</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Noite</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">8 Vagas</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: Cartões e Tabela de Dados -->
+<section class="ds-section flex flex-col gap-space-lg" id="tab-dados">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Secção 4 • Scorecards &amp; Registos</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Cartões Métricos (KPIs) &amp; Tabela de Pautas</h2>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Densidade de Dados Académicos</span>
+</div>
+<!-- Metric KPI Cards Showcase -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Card 1: Assiduidade Global -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute top-0 left-0 right-0 h-1 bg-[#123B63]"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Assiduidade Geral</span>
+<span class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">co_present</span>
+</span>
+</div>
+<div class="my-space-sm flex flex-col">
+<span class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight">96.4%</span>
+<div class="flex items-center gap-1.5 text-[#15803D] font-label-sm text-label-sm font-semibold mt-1">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span class="">+2.1% face ao trimestre I</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 bg-surface-container-low px-2.5 py-1.5 rounded-lg">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Meta institucional:</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">95.0%</span>
+</div>
+</div>
+<!-- Card 2: Alunos Matriculados -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute top-0 left-0 right-0 h-1 bg-[#246B9B]"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Total de Estudantes</span>
+<span class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+</span>
+</div>
+<div class="my-space-sm flex flex-col">
+<span class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight">1.840</span>
+<div class="flex items-center gap-1.5 text-secondary font-label-sm text-label-sm font-semibold mt-1">
+<span class="material-symbols-outlined text-[16px]">school</span>
+<span class="">52 Turmas Ativas</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 bg-surface-container-low px-2.5 py-1.5 rounded-lg">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Capacidade física:</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">92% ocupação</span>
+</div>
+</div>
+<!-- Card 3: Bolseiros de Mérito -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute top-0 left-0 right-0 h-1 bg-[#E5A93D]"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Bolsas de Mérito</span>
+<span class="w-9 h-9 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">military_tech</span>
+</span>
+</div>
+<div class="my-space-sm flex flex-col">
+<span class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight">142</span>
+<div class="flex items-center gap-1.5 text-[#B45309] font-label-sm text-label-sm font-semibold mt-1">
+<span class="material-symbols-outlined text-[16px]">workspace_premium</span>
+<span class="">Média geral ≥ 16.5 val.</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 bg-surface-container-low px-2.5 py-1.5 rounded-lg">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Fundo de bolsas:</span>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">100% subvencionado</span>
+</div>
+</div>
+<!-- Card 4: Cobrança de Propinas -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute top-0 left-0 right-0 h-1 bg-[#15803D]"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Arrecadação do Mês</span>
+<span class="w-9 h-9 rounded-lg bg-[#DCFCE7] flex items-center justify-center text-[#15803D]">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</span>
+</div>
+<div class="my-space-sm flex flex-col">
+<span class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight">88.7%</span>
+<div class="flex items-center gap-1.5 text-outline font-label-sm text-label-sm font-medium mt-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="">Até ao dia 10 do mês</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 bg-surface-container-low px-2.5 py-1.5 rounded-lg">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Regularizados:</span>
+<span class="font-label-sm text-label-sm text-[#15803D] font-bold">1.632 Alunos</span>
+</div>
+</div>
+</div>
+<!-- Tabela Académica de Amostra -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Toolbar da Tabela -->
+<div class="p-space-md flex flex-wrap items-center justify-between gap-space-sm bg-surface-container-lowest">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Pauta Geral de Estudantes • 10.ª Classe B</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">Ano 2026</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container-low text-primary font-label-sm text-label-sm hover:bg-surface-container flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">filter_list</span> Filtrar
+          </button>
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container-low text-primary font-label-sm text-label-sm hover:bg-surface-container flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">file_download</span> Exportar Excel
+          </button>
+</div>
+</div>
+<!-- Table Body -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-outline font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-space-md font-semibold">N.º Proc.</th>
+<th class="py-3 px-space-md font-semibold">Estudante &amp; BI</th>
+<th class="py-3 px-space-md font-semibold">Curso / Especialidade</th>
+<th class="py-3 px-space-md font-semibold">Média Geral</th>
+<th class="py-3 px-space-md font-semibold">Estado do Processo</th>
+<th class="py-3 px-space-md font-semibold text-right">Ações Rápidas</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-transparent font-body-md text-body-md text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-space-md font-mono font-semibold text-secondary">NZL-2026-014</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-md text-label-md font-bold shadow-xs">
+                    TN
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">Teresa Ndongala</span>
+<span class="font-body-sm text-body-sm text-outline font-mono">004829102LA041</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-md text-on-surface-variant font-medium">Ciências Físicas e Biológicas</td>
+<td class="py-3 px-space-md">
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-tertiary font-label-sm text-label-sm font-bold">17.8 val.</span>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#FEF9C3] text-[#B45309] font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[12px] text-[#E5A93D]">star</span> Bolseiro Mérito
+                </span>
+</td>
+<td class="py-3 px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded-lg text-secondary hover:bg-secondary-fixed transition-colors" title="Ver Ficha" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" title="Editar Notas" type="button">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:bg-surface-container-high transition-colors" title="Mais Opções" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-space-md font-mono font-semibold text-secondary">NZL-2026-088</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-md text-label-md font-bold shadow-xs">
+                    MC
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">Mateus Castelo Branco</span>
+<span class="font-body-sm text-body-sm text-outline font-mono">009182344BA029</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-md text-on-surface-variant font-medium">Informática de Gestão</td>
+<td class="py-3 px-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">14.2 val.</span>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#DCFCE7] text-[#15803D] font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#15803D]"></span> Regular
+                </span>
+</td>
+<td class="py-3 px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded-lg text-secondary hover:bg-secondary-fixed transition-colors" title="Ver Ficha" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" title="Editar Notas" type="button">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:bg-surface-container-high transition-colors" title="Mais Opções" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-space-md font-mono font-semibold text-secondary">NZL-2026-102</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-label-md text-label-md font-bold shadow-xs">
+                    EG
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">Esperança Gaspar</span>
+<span class="font-body-sm text-body-sm text-outline font-mono">007612981LA092</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-md text-on-surface-variant font-medium">Contabilidade e Finanças</td>
+<td class="py-3 px-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-mono">Pendente</span>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#FEF3C7] text-[#D97706] font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#D97706]"></span> Validação Docs
+                </span>
+</td>
+<td class="py-3 px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded-lg text-secondary hover:bg-secondary-fixed transition-colors" title="Ver Ficha" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" title="Editar Notas" type="button">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:bg-surface-container-high transition-colors" title="Mais Opções" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Paginação Padrão da Tabela -->
+<div class="p-space-md flex flex-wrap items-center justify-between gap-space-sm bg-surface-container-low">
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+          A mostrar <strong class="text-primary font-semibold">1-3</strong> de <strong class="text-primary font-semibold">24</strong> registos de pauta
+        </span>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-outline flex items-center justify-center opacity-50 cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-bold flex items-center justify-center shadow-xs" type="button">
+            1
+          </button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-primary font-label-sm text-label-sm hover:bg-surface-container flex items-center justify-center transition-colors" type="button">
+            2
+          </button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-primary font-label-sm text-label-sm hover:bg-surface-container flex items-center justify-center transition-colors" type="button">
+            3
+          </button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-primary flex items-center justify-center hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: Modais, Feedback & Estados -->
+<section class="ds-section flex flex-col gap-space-lg" id="tab-feedback">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Secção 5 • Diálogos &amp; Estados</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Modais, Notificações Toast &amp; Placeholders</h2>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Nível 3 de Elevação</span>
+</div>
+<!-- Grid: Modal Preview + Toast + Empty State + Skeleton -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+<!-- 1. Modal Dialog Embutido de Demonstração -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Componente Modal Dialog</span>
+<span class="px-2 py-0.5 rounded bg-error-container text-error font-label-sm text-label-sm font-semibold">Crítico</span>
+</div>
+<div class="rounded-xl p-space-md bg-surface-container-low flex flex-col gap-space-md shadow-inner">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-error-container text-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">warning</span>
+</div>
+<div class="flex flex-col">
+<h4 class="font-headline-sm text-headline-sm text-primary font-bold">Confirmação de Anulação de Matrícula</h4>
+<span class="font-body-sm text-body-sm text-outline font-mono">Processo NZL-2026-0881</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-[#FEF2F2] text-[#991B1B] font-body-sm text-body-sm leading-relaxed flex flex-col gap-1"><strong class="font-semibold">Atenção ao impacto no sistema escolar:</strong>
+            Esta ação revoga imediatamente o vínculo estudantil do aluno no Sistema de Gestão Escolar.</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-space-md py-2 rounded-[8px] bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container font-label-md text-label-md font-semibold transition-colors" type="button">
+              Cancelar e Manter Ativo
+            </button>
+<button class="px-space-md py-2 rounded-[8px] bg-error text-on-error hover:bg-opacity-90 font-label-md text-label-md font-bold transition-colors shadow-sm flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+              Confirmar Anulação
+            </button>
+</div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Acionamento com backdrop scrim rgba(18, 59, 99, 0.45) e foco travado via React Portal.</span>
+</div>
+<!-- 2. Toast Notification Showcase -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Toast Notification (Flutuante)</span>
+<span class="px-2 py-0.5 rounded bg-[#DCFCE7] text-[#15803D] font-label-sm text-label-sm font-semibold">Sucesso</span>
+</div>
+<!-- Toast Card Sample -->
+<div class="p-space-md rounded-xl bg-primary text-on-primary shadow-xl flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-[#15803D] text-on-primary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[22px]">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold">Recibo Emitido com Sucesso</span>
+<span class="font-body-sm text-body-sm text-secondary-fixed-dim">Recibo n.º 2026/0892 gerado para Teresa Ndongala (Kz 45.000).</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container-lowest/10 hover:bg-surface-container-lowest/20 text-on-primary font-label-sm text-label-sm transition-colors" type="button">
+              Desfazer
+            </button>
+<button class="p-1 text-on-primary-container hover:text-on-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- Toast Warning Sample -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest text-primary shadow-md flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-[#FEF3C7] text-[#D97706] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">cloud_sync</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold">Sincronização Offline Ativa</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Os dados das pautas serão salvos localmente e reenviados ao servidor central.</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-outline font-mono">Há 2m</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Duração auto-dismiss: 4500ms com barra de progresso regressiva.</span>
+</div>
+<!-- 3. Empty State (Estado Vazio) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col items-center justify-center text-center gap-space-sm py-12">
+<div class="w-20 h-20 rounded-2xl bg-surface-container-low flex items-center justify-center text-secondary mb-2">
+<!-- Inline SVG Illustration for Empty State -->
+<svg class="w-12 h-12 text-secondary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 12C8 9.79086 9.79086 8 12 8H36C38.2091 8 40 9.79086 40 12V36C40 38.2091 38.2091 40 36 40H12C9.79086 40 8 38.2091 8 36V12Z" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="2"></path>
+<path d="M16 20H32M16 28H24" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<circle cx="34" cy="34" fill="#E5A93D" r="7"></circle>
+<path d="M34 31V37M31 34H37" stroke="#121c2a" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary font-bold">Nenhum registo pendente encontrado</h4>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Não existem processos pendentes neste ciclo de ensino.</p>
+<button class="mt-space-xs px-space-md py-2.5 rounded-[8px] bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition-all flex items-center gap-space-xs shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">add_circle</span><span class="">Adicionar novo registo</span></button>
+</div>
+<!-- 4. Skeleton Loader (Estado de Carregamento) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Skeleton Loading (Shimmer)</span>
+<span class="font-label-sm text-label-sm text-outline font-mono animate-pulse">Carregando dados...</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Skeleton Card Header -->
+<div class="flex items-center gap-space-sm p-space-sm bg-surface-container-low rounded-lg animate-pulse">
+<div class="w-10 h-10 rounded-full bg-surface-container-high"></div>
+<div class="flex flex-col gap-2 flex-1">
+<div class="w-48 h-4 bg-surface-container-high rounded"></div>
+<div class="w-24 h-3 bg-surface-container-high rounded"></div>
+</div>
+<div class="w-16 h-6 bg-surface-container-high rounded-full"></div>
+</div>
+<!-- Skeleton Table Rows -->
+<div class="flex flex-col gap-2 pt-2 animate-pulse">
+<div class="w-full h-9 bg-surface-container-low rounded flex items-center px-4 justify-between">
+<div class="w-20 h-3.5 bg-surface-container-high rounded"></div>
+<div class="w-32 h-3.5 bg-surface-container-high rounded"></div>
+<div class="w-16 h-3.5 bg-surface-container-high rounded"></div>
+</div>
+<div class="w-full h-9 bg-surface-container-low rounded flex items-center px-4 justify-between">
+<div class="w-24 h-3.5 bg-surface-container-high rounded"></div>
+<div class="w-40 h-3.5 bg-surface-container-high rounded"></div>
+<div class="w-16 h-3.5 bg-surface-container-high rounded"></div>
+</div>
+<div class="w-full h-9 bg-surface-container-low rounded flex items-center px-4 justify-between">
+<div class="w-28 h-3.5 bg-surface-container-high rounded"></div>
+<div class="w-36 h-3.5 bg-surface-container-high rounded"></div>
+<div class="w-16 h-3.5 bg-surface-container-high rounded"></div>
+</div>
+</div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Transição suave para renderizar layout sem quebras de Cumulative Layout Shift (CLS).</span>
+</div>
+</div>
+</section>
+<!-- SECTION 6: Especificações Responsivas (Guia React / CSS Vanilla) -->
+<section class="ds-section flex flex-col gap-space-lg" id="tab-responsividade">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Secção 6 • Engenharia &amp; Responsividade</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Diretrizes para Implementação React &amp; CSS Vanilla</h2>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Breakpoints &amp; Variáveis de Estilo</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+<!-- Coluna Tablet: 768px - 1023px -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[24px]">tablet_mac</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Comportamento Tablet (768px - 1023px)</h3>
+</div>
+<span class="px-2.5 py-0.5 rounded bg-surface-container text-primary font-mono text-label-sm">md: 768px</span>
+</div>
+<ul class="flex flex-col gap-space-sm font-body-md text-body-md text-on-surface">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">menu_open</span>
+<div class="">
+<strong>Sidebar Condensada:</strong> A barra lateral fixa de 260px retrai para uma barra compacta de 72px com ícones centrados e tooltips no evento de hover.
+            </div>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">grid_view</span>
+<div class="">
+<strong>Grelha de KPIs 2x2:</strong> A faixa de scorecards colapsa de 4 colunas para uma matriz equilibrada de 2 colunas com espaçamento de 16px.
+            </div>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">table_rows</span>
+<div class=""><strong class="">Scroll Horizontal com Sticky Column:</strong> Tabelas volumosas mantêm as colunas "N.º Proc." e "Ações" fixas com position: sticky à esquerda e direita.</div>
+</li>
+</ul>
+<!-- Visual representation tablet layout -->
+<div class="mt-2 p-space-sm rounded-lg bg-surface-container-low flex items-center justify-center">
+<div class="w-full max-w-xs h-28 rounded-lg bg-surface-container-lowest shadow-sm flex overflow-hidden">
+<div class="w-8 h-full bg-primary flex flex-col items-center py-2 gap-1">
+<span class="w-3 h-3 rounded-full bg-tertiary-fixed"></span>
+<span class="w-3 h-0.5 bg-secondary-fixed-dim"></span>
+<span class="w-3 h-0.5 bg-secondary-fixed-dim"></span>
+</div>
+<div class="flex-1 p-2 flex flex-col gap-1.5">
+<div class="w-full h-3 bg-surface-container rounded"></div>
+<div class="grid grid-cols-2 gap-1">
+<div class="h-8 bg-surface-container-high rounded"></div>
+<div class="h-8 bg-surface-container-high rounded"></div>
+</div>
+<div class="w-full h-5 bg-surface-container-low rounded"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Coluna Telemóvel: < 768px -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[24px]">smartphone</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Comportamento Telemóvel (&lt; 768px)</h3>
+</div>
+<span class="px-2.5 py-0.5 rounded bg-surface-container text-primary font-mono text-label-sm">sm: &lt; 768px</span>
+</div>
+<ul class="flex flex-col gap-space-sm font-body-md text-body-md text-on-surface">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">bottom_navigation</span>
+<div class="">
+<strong>Drawer &amp; Bottom Nav:</strong> A barra superior simplifica com botão hambúrguer. Ações prioritárias são acessadas através de uma barra de navegação inferior.
+            </div>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">view_carousel</span>
+<div class="">
+<strong>Carrossel de Cartões:</strong> Indicadores transformam-se num carrossel deslizante com rolagem suave e paginação por pontos.
+            </div>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">view_agenda</span>
+<div class=""><strong class="">Scroll Horizontal com Sticky Column:</strong> Tabelas volumosas mantêm as colunas "N.º Proc." e "Ações" fixas com position: sticky à esquerda e direita.</div>
+</li>
+</ul>
+<!-- Visual representation mobile layout -->
+<div class="mt-2 p-space-sm rounded-lg bg-surface-container-low flex items-center justify-center">
+<div class="w-40 h-28 rounded-lg bg-surface-container-lowest shadow-sm flex flex-col justify-between overflow-hidden p-1.5">
+<div class="w-full h-3 bg-primary rounded flex items-center justify-between px-1">
+<span class="w-2 h-1 bg-on-primary rounded"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="w-full h-4 bg-surface-container rounded"></div>
+<div class="w-full h-4 bg-surface-container rounded"></div>
+<div class="w-full h-4 bg-surface-container rounded"></div>
+</div>
+<div class="w-full h-2.5 bg-surface-container-high rounded-full flex justify-around items-center px-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Código Vanilla CSS de Especificação dos Tokens (Snippet Técnico) -->
+<div class="bg-[#121c2a] text-on-primary rounded-xl p-space-lg shadow-md flex flex-col gap-space-sm font-mono text-body-sm overflow-x-auto">
+<div class="flex items-center justify-between text-secondary-fixed-dim">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">css</span>
+<span class="font-bold">nzila-tokens.css • Definição em CSS Puro (Vanilla)</span>
+</div>
+<span class="text-label-sm text-outline">Pronto para importar em projetos React</span>
+</div>
+<pre class="text-surface-bright leading-relaxed overflow-x-auto">:root {
+  /* Cores Institucionais Nzila */
+  --nzila-navy-deep: #123B63;
+  --nzila-blue-action: #246B9B;
+  --nzila-gold-merit: #E5A93D;
+  --nzila-bg-ice: #F6F8FB;
+  --nzila-surface-pure: #FFFFFF;
+  --nzila-text-main: #1F2937;
+  --nzila-text-muted: #4B5563;
+
+  /* Semânticas */
+  --nzila-success: #15803D;
+  --nzila-warning: #D97706;
+  --nzila-danger: #DC2626;
+
+  /* Geometria e Grid */
+  --radius-card: 10px;
+  --radius-btn: 8px;
+  --radius-tag: 6px;
+  --radius-pill: 9999px;
+  --space-unit: 8px;
+
+  /* Sombras Institucionais */
+  --shadow-card: 0 1px 3px 0 rgba(18, 59, 99, 0.04), 0 1px 2px -1px rgba(18, 59, 99, 0.02);
+  --shadow-hover: 0 4px 6px -1px rgba(18, 59, 99, 0.07), 0 2px 4px -2px rgba(18, 59, 99, 0.05);
+  --shadow-modal: 0 20px 25px -5px rgba(18, 59, 99, 0.12), 0 8px 10px -6px rgba(18, 59, 99, 0.08);
+}
+      </pre>
+</div>
+</section>
+<!-- Script para alternância suave das abas -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabButtons = document.querySelectorAll('#ds-nav-tabs .tab-btn');
+      const sections = {
+        fundamentos: document.getElementById('tab-fundamentos'),
+        componentes: document.getElementById('tab-componentes'),
+        formularios: document.getElementById('tab-formularios'),
+        dados: document.getElementById('tab-dados'),
+        feedback: document.getElementById('tab-feedback'),
+        responsividade: document.getElementById('tab-responsividade')
+      };
+
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const targetTab = btn.getAttribute('data-tab');
+
+          // Reset all buttons style
+          tabButtons.forEach(b => {
+            b.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+            b.classList.add('text-on-surface-variant');
+          });
+
+          // Set active button
+          btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+          btn.classList.remove('text-on-surface-variant');
+
+          // Smooth scroll to the targeted section
+          if (sections[targetTab]) {
+            sections[targetTab].scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    });
+  </script>
+</div></main></div>
+
+</body></html>
